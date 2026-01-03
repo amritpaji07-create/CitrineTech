@@ -1,0 +1,97 @@
+﻿@using CitrineTechData.ViewModel
+@model TeamViewModel
+
+@{
+    ViewData["Title"] = "Team Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="px-6 py-4">
+    <div class="bg-white shadow-lg rounded-lg">
+        <div class="bg-gray-700 text-white px-6 py-4 rounded-t-lg">
+            <h4 class="text-xl font-semibold">Add Team</h4>
+        </div>
+        <div class="px-6 py-4">
+            <form asp-action="TeamCreate" enctype="multipart/form-data" class="space-y-6">
+                <div asp-validation-summary="ModelOnly" class="bg-red-100 text-red-700 p-4 rounded"></div>
+
+                <!-- Title -->
+                <div>
+                    <label asp-for="Name" class="block text-sm font-medium text-gray-700"></label>
+                    <input asp-for="Name" required class="mt-1 p-3 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                    <span asp-validation-for="Name" class="text-red-600 text-sm"></span>
+                </div>
+
+                <!-- SubTitle -->
+                <div>
+                    <label asp-for="Designation" class="block text-sm font-medium text-gray-700"></label>
+                    <input asp-for="Designation" required  class="mt-1 p-3 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                    <span asp-validation-for="Designation" class="text-red-600 text-sm"></span>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label asp-for="Description" class="block text-sm font-medium text-gray-700"></label>
+                    <input asp-for="Description" required class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></input>
+                    <span asp-validation-for="Description" class="text-red-600 text-sm"></span>
+                </div>
+
+                <!-- Team Date -->
+                <div>
+                    <label asp-for="Index" class="block text-sm font-medium text-gray-700"></label>
+                    <input asp-for="Index" required type="number" class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                    <span asp-validation-for="Index" class="text-red-600 text-sm"></span>
+                </div>
+                
+
+                <!-- Photo Upload -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Upload Image</label>
+                    <input asp-for="Photo" type="file" required class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                    <span asp-validation-for="Photo" class="text-red-600 text-sm"></span>
+                </div>
+
+               
+                <!-- IsActive -->
+                <div class="flex items-center">
+                    <input asp-for="IsActive" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded" required/>
+                    <label asp-for="IsActive" class="ml-2 block text-sm text-gray-700"></label>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-between">
+                    <input type="submit" value="Create" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" />
+                    <a asp-action="Teams" class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <text>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: '@TempData["SuccessMessage"]',
+                    confirmButtonColor: '#3085d6'
+                });
+        </text>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <text>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: '@TempData["ErrorMessage"]',
+                    confirmButtonColor: '#d33'
+                });
+        </text>
+    }
+                });
+</script>

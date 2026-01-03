@@ -1,0 +1,71 @@
+﻿@model CitrineTechData.DataModel.Team
+
+@{
+    ViewData["Title"] = "Team Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="max-w-5xl mx-auto mt-8 px-4 py-5">
+    <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+
+        <!-- Header -->
+        <div class="px-6 py-4">
+            <h2 class="text-2xl font-semibold flex items-center gap-2 text-black">
+                📄 <span>Team Details</span>
+            </h2>
+        </div>
+
+        <!-- Body -->
+        <div class="px-6 py-6 space-y-6">
+
+            <!-- Image Section -->
+            <div class="text-center">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Url.Content("~/" + Model.ImageUrl)" alt="Team Member Image"
+                         class="w-36 h-36 object-cover rounded-md hover:scale-105 transition-transform duration-300" />
+                }
+                else
+                {
+                    <span class="text-gray-500 italic">No image uploaded</span>
+                }
+            </div>
+            <hr />
+            <!-- Info Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-6 text-gray-700">
+                <div>
+                    <span class="font-semibold block text-sm text-gray-600">Name:</span>
+                    <div class="mt-1">@Model.Name</div>
+                </div>
+                <div>
+                    <span class="font-semibold block text-sm text-gray-600">Designation:</span>
+                    <div class="mt-1">@Model.Designation</div>
+                </div>
+                <div>
+                    <span class="font-semibold block text-sm text-gray-600">Index:</span>
+                    <div class="mt-1">@Model.Index</div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div>
+                <span class="font-semibold text-gray-800 block mb-2">Description:</span>
+                <div class="bg-gray-50 p-4 rounded border text-gray-700 prose max-w-none">
+                    @Html.Raw(Model.Description)
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-6 py-4 bg-gray-100 flex flex-col sm:flex-row justify-between gap-4">
+            <a asp-action="TeamEdit" asp-route-id="@Model.Id"
+               class="border-1 border-black text-black px-4 py-2 rounded hover:bg-yellow-600 hover:text-white text-center transition">
+                ✏️ Edit
+            </a>
+            <a asp-action="Teams"
+               class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 text-center transition">
+                ← Back to List
+            </a>
+        </div>
+    </div>
+</div>

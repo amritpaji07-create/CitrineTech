@@ -1,0 +1,50 @@
+﻿@model CitrineTechData.DataModel.Contact
+
+@{
+    ViewData["Title"] = "Contact Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="max-w-5xl mx-auto mt-8 px-4 py-5">
+    <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+
+        <!-- Header -->
+        <div class="bg-blue-600 text-black px-6 py-4">
+            <h2 class="text-2xl font-semibold">📄 Contact Details</h2>
+        </div>
+        <hr />
+        <!-- Body -->
+        <div class="px-6 py-6 space-y-6 mt-5">
+
+            <!-- Info Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-gray-700">
+                <div>
+                    <span class="font-semibold">Name:</span>
+                    <div>@Model.Name</div>
+                </div>
+                <div>
+                    <span class="font-semibold">Email:</span>
+                    <div>@Model.Email</div>
+                </div>
+                <div>
+                    <span class="font-semibold">Contact No:</span>
+                    <div>@Model.ContactNo</div>
+                </div>
+                <div>
+                    <span class="font-semibold">Remark:</span>
+                    <div>@Model.Remark</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-6 py-4 bg-gray-100 flex flex-col sm:flex-row justify-between gap-4 mt-5">
+            <a asp-action="ContactEdit" asp-route-id="@Model.Id" class="border-1 border-gray text-black px-4 py-2 rounded hover:bg-yellow-600 text-center">
+                ✏️ Edit
+            </a>
+            <a asp-action="Contacts" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 text-center">
+                ← Back to List
+            </a>
+        </div>
+    </div>
+</div>

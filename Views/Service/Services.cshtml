@@ -1,0 +1,186 @@
+﻿@using X.PagedList.Mvc.Core
+@using X.PagedList
+@model IPagedList<CitrineTechData.DataModel.Service>
+@Html.AntiForgeryToken()
+
+@{
+    ViewData["Title"] = "All Services";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int serial = (Model.PageNumber - 1) * Model.PageSize + 1;
+}
+
+<div class="px-4 sm:px-6 py-4">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-6 rounded-xl p-4 sm:p-5 bg-gray-700 text-white shadow-sm">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                <div>
+                    <h2 class="text-lg sm:text-2xl font-semibold">All Services</h2>
+                    <p class="text-white/80 text-sm mt-0.5">Manage posts, update status, and keep content fresh.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <a asp-action="ServiceCreate" class="inline-flex items-center gap-2 text-white border border-white/40 px-4 py-2 rounded-lg hover:bg-white/90 shadow-sm text-sm md:text-base">
+                        <i data-lucide="plus" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        <span class="hidden sm:inline">Add New</span>
+                        @* <span class="sm:hidden">Add</span> *@
+                    </a>
+                    <a asp-controller="Account" asp-action="Dashboard" class="inline-flex items-center gap-2 border border-white/40 text-white px-4 py-2 rounded-lg hover:bg-white/10 shadow-sm text-sm md:text-base">
+                        <i data-lucide="arrow-left" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto bg-white shadow rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-100">
+                <tr>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">S.No.</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Title</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">SubTitle</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Description</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Index</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Photo</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Status</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                @foreach (var item in Model)
+                {
+                    var firstImage = item.ImageUrl?.Split(',').FirstOrDefault()?.Trim();
+                    <tr>
+                        <td class="px-4 py-2">@serial</td>
+                        <td class="px-4 py-2">@item.Name</td>
+                        <td class="px-4 py-2">@item.SubTitle</td>
+                        <td class="px-4 py-2">
+                            @((item.Description?.Length ?? 0) > 50
+                                ? Html.Raw(item.Description.Substring(0, 50) + "...")
+                                : Html.Raw(item.Description))
+                        </td>
+                        <td class="px-4 py-2">@item.Index</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.ImageUrl))
+                            {
+                                <img src="~/@item.ImageUrl" alt="About Photo" class="img-thumbnail" style="max-width: 80px;" />
+                            }
+                        </td>
+
+                        <td class="px-4 py-2">
+                            <button type="button"
+                                    class="px-3 py-1 text-sm rounded toggle-status-btn @(item.IsActive ? "bg-green-500 text-white" : "bg-red-500 text-white")"
+                                    data-id="@item.Id"
+                                    data-status="@item.IsActive">
+                                @(item.IsActive ? "Active" : "Inactive")
+                            </button>
+                        </td>
+                        <td class="px-4 py-2">
+                            <div class="flex space-x-2">
+                                <a asp-action="ServiceDetails" asp-route-id="@item.Id" class="inline-flex items-center gap-1 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm md:text-base shadow-sm">
+                                    <i data-lucide="eye" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                                </a>
+                                <a asp-action="ServiceEdit" asp-route-id="@item.Id" class="inline-flex items-center gap-1 bg-yellow-500 hover:bg-amber-600 text-white px-3 py-1 rounded text-sm md:text-base shadow-sm">
+                                    <i data-lucide="pencil" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                                </a>
+
+                                <button type="button"
+                                        class="inline-flex items-center gap-1 bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm md:text-base shadow-sm"
+                                        data-modal-target="deleteModal-@item.Id">
+                                    <i data-lucide="trash-2" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div id="deleteModal-@item.Id" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                                    <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+                                        <h3 class="text-lg font-semibold mb-4">Confirm Delete</h3>
+                                        <p class="mb-4">Are you sure you want to delete "<strong>@item.Name</strong>"?</p>
+                                        <div class="flex justify-end space-x-2">
+                                            <button type="button" class="px-4 py-2 bg-gray-300 rounded" onclick="closeModal('@item.Id')">Cancel</button>
+                                            <form asp-action="Delete" asp-controller="Service" asp-route-id="@item.Id" method="post">
+                                                <input type="hidden" name="id" value="@item.Id" />
+                                                <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded">Yes, Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    serial++;
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-between items-center mt-6">
+        <div class="text-gray-600">
+            Page <strong>@Model.PageNumber</strong> of <strong>@Model.PageCount</strong>
+        </div>
+        <div>
+            @Html.PagedListPager(Model, page => Url.Action("Services", new { page }),
+                     new PagedListRenderOptions
+            {
+                DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+                DisplayLinkToLastPage = PagedListDisplayMode.Never,
+                DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                DisplayLinkToIndividualPages = true,
+                DisplayEllipsesWhenNotShowingAllPageNumbers = true,
+                MaximumPageNumbersToDisplay = 3,
+                LinkToPreviousPageFormat = "← Prev",
+                LinkToNextPageFormat = "Next →",
+                UlElementClasses = new[] { "flex space-x-2" },
+                LiElementClasses = new[] { "page-item" },
+                PageClasses = new[] { "px-3 py-1 bg-gray-200 rounded hover:bg-gray-300" }
+            })
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function () {
+        $('.toggle-status-btn').click(function () {
+            var button = $(this);
+            var id = button.data('id');
+
+            $.ajax({
+                url: '/Service/ToggleStatus',
+                type: 'POST',
+                data: { id: id },
+                success: function (result) {
+                    if (result.success) {
+                        if (result.isActive) {
+                            button.removeClass('bg-red-500')
+                                .addClass('bg-green-500')
+                                .text('Active')
+                                .data('status', true);
+                        } else {
+                            button.removeClass('bg-green-500')
+                                .addClass('bg-red-500')
+                                .text('Inactive')
+                                .data('status', false);
+                        }
+                    } else {
+                        alert('Could not update status.');
+                    }
+                },
+                error: function () {
+                    alert('Error updating status');
+                }
+            });
+        });
+    });
+
+    function closeModal(id) {
+        document.getElementById('deleteModal-' + id).classList.add('hidden');
+    }
+
+    document.querySelectorAll('[data-modal-target]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-modal-target');
+            document.getElementById(targetId).classList.remove('hidden');
+        });
+    });
+</script>

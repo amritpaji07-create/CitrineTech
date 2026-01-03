@@ -1,0 +1,68 @@
+﻿@model CitrineTechData.DataModel.Career
+
+@{
+    ViewData["Title"] = "Career Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="max-w-5xl mx-auto mt-8 px-4 py-5">
+    <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+
+        <!-- Header -->
+        <div class="bg-blue-600 text-black px-6 py-4">
+            <h2 class="text-2xl font-semibold">📄 Career Details</h2>
+        </div>
+        <hr />
+        <!-- Body -->
+        <div class="px-6 py-6 space-y-6 mt-5">
+
+            <!-- CV URL -->
+            <div>
+                <span class="font-semibold text-gray-800">CV URL:</span>
+                <div class="mt-1 text-blue-600 break-words">@Model.CvUrl</div>
+            </div>
+
+            <!-- Info Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-gray-700">
+                <div>
+                    <span class="font-semibold">Name:</span>
+                    <div>@Model.Name</div>
+                </div>
+                <div>
+                    <span class="font-semibold">Email:</span>
+                    <div>@Model.Email</div>
+                </div>
+                <div>
+                    <span class="font-semibold">Contact No:</span>
+                    <div>@Model.Contact</div>
+                </div>
+                <div>
+                    <span class="font-semibold">Position:</span>
+                    <div>@Model.Position</div>
+                </div>
+                <div>
+                    <span class="font-semibold">Location:</span>
+                    <div>@Model.Location</div>
+                </div>
+            </div>
+
+            @* Optional Description Section *@
+            @* <div>
+            <span class="font-semibold text-gray-800">Description:</span>
+            <div class="mt-2 bg-gray-50 p-4 rounded border text-gray-700 prose max-w-none">
+            @Html.Raw(Model.Description)
+            </div>
+            </div> *@
+        </div>
+
+        <!-- Footer -->
+        <div class="px-6 py-4 bg-gray-100 flex flex-col sm:flex-row justify-between gap-4 mt-5">
+            <a asp-action="CareerEdit" asp-route-id="@Model.Id" class="border-1 border-gray text-black px-4 py-2 rounded hover:bg-yellow-600 text-center">
+                ✏️ Edit
+            </a>
+            <a asp-action="Careers" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 text-center">
+                ← Back to List
+            </a>
+        </div>
+    </div>
+</div>

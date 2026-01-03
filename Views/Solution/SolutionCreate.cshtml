@@ -1,0 +1,70 @@
+﻿@using CitrineTechData.ViewModel
+@model SolutionViewModel
+
+@{
+    ViewData["Title"] = "Solution Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="px-6 py-4">
+    <div class="bg-white shadow-lg rounded-lg">
+        <div class="bg-gray-700 text-white px-6 py-4 rounded-t-lg">
+            <h4 class="text-xl font-semibold">Add Solution</h4>
+        </div>
+        <div class="px-6 py-4">
+            <form asp-action="SolutionCreate" enctype="multipart/form-data" class="space-y-6">
+                <div asp-validation-summary="ModelOnly" class="bg-red-100 text-red-700 p-4 rounded"></div>
+
+                <!-- Title -->
+                <div>
+                    <label asp-for="Name" class="block text-sm font-medium text-gray-700"></label>
+                    <input asp-for="Name" class="mt-1 p-3 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                    <span asp-validation-for="Name" class="text-red-600 text-sm"></span>
+                </div>
+
+                <!-- SubTitle -->
+                <div>
+                    <label asp-for="SubTitle" class="block text-sm font-medium text-gray-700"></label>
+                    <input asp-for="SubTitle" class="mt-1 p-3 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                    <span asp-validation-for="SubTitle" class="text-red-600 text-sm"></span>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label asp-for="Description" class="block text-sm font-medium text-gray-700"></label>
+                    <textarea asp-for="Description" id="Description" class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    <span asp-validation-for="Description" class="text-red-600 text-sm"></span>
+                </div>
+
+                <!-- Solution Date -->
+                <div>
+                    <label asp-for="Index" class="block text-sm font-medium text-gray-700"></label>
+                    <input asp-for="Index" type="number" class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                    <span asp-validation-for="Index" class="text-red-600 text-sm"></span>
+                </div>
+
+                <!-- Photo Upload -->
+                <div>
+                    <label asp-for="Photos" class="block text-sm font-medium text-gray-700">Upload Image</label>
+                    <input asp-for="Photos" type="file" multiple id="imageInput"  class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                    <span asp-validation-for="Photos" class="text-red-600 text-sm"></span>                    
+                </div>
+
+                <!-- Image Previews -->
+                <div id="imagePreviewContainer" class="flex flex-wrap gap-4"></div>
+
+                <!-- IsActive -->
+                <div class="flex items-center">
+                    <input asp-for="IsActive" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded" />
+                    <label asp-for="IsActive" class="ml-2 block text-sm text-gray-700"></label>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-between">
+                    <input type="submit" value="Create" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" />
+                    <a asp-action="Solutions" class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

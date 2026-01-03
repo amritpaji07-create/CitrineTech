@@ -1,0 +1,117 @@
+﻿@model CitrineTechData.DataModel.Blog
+
+@{
+    ViewData["Title"] = "Blog Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var images = Model.ImageUrl?.Split(",", StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>();
+    var gliderId = "productSlider_" + Model.Id;
+}
+
+<div class="max-w-6xl mx-auto mt-8 px-4">
+    <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+
+        <!-- Header -->
+        <div class="bg-blue-600  px-6 py-4">
+            <h2 class="text-2xl font-semibold text-black">📰 Details</h2>
+        </div>
+
+        <!-- Image Carousel -->
+        @if (images.Any())
+        {
+            <div class="text-center py-6">
+                <div id="@gliderId" class="glider flex gap-4 justify-center">
+                    @foreach (var img in images)
+                    {
+                        <div class="p-2 border rounded-lg bg-gray-100">
+                            <img src="@Url.Content("~/" + img.Trim())" alt="@Model.Title image" class="w-36 h-36 object-cover rounded-md hover:scale-105 transition-transform duration-300" />
+                        </div>
+                    }
+                </div>
+
+                <div class="flex justify-center items-center mt-4 gap-4">
+                    <button class="glider-prev px-4 py-2 bg-gray-300 rounded hover:bg-gray-400" aria-label="Previous Slide">«</button>
+                    <button class="glider-next px-4 py-2 bg-gray-300 rounded hover:bg-gray-400" aria-label="Next Slide">»</button>
+                </div>
+
+                <div class="mt-2 text-sm text-gray-600" id="slideCounter_@Model.Id">1 / @images.Length</div>
+            </div>
+        }
+
+        <!-- Details Section -->
+        <div class="px-6 py-4 space-y-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700">
+                <div>
+                    <span class="font-semibold">Title:</span>
+                    <div>@Model.Title</div>
+                </div>
+                <div>
+                    <span class="font-semibold">SubTitle:</span>
+                    <div>@Model.SubTitle</div>
+                </div>
+                <div>
+                    <span class="font-semibold">Index:</span>
+                    <div>@Model.Index</div>
+                </div>
+            </div>
+
+            <div>
+                <span class="font-semibold text-gray-800">Description:</span>
+                <div class="mt-2 bg-gray-50 p-4 rounded border text-gray-700 prose max-w-none">
+                    @Html.Raw(Model.Description)
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Buttons -->
+        <div class="px-6 py-4 flex justify-between">
+            <a asp-action="BlogEdit" asp-route-id="@Model.Id" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600" title="Edit this news" style="border:1px solid gray; color:black;">
+                ✏️ Edit
+            </a>
+            <a asp-action="Blogs" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600" title="Return to news list">
+                ← Back to List
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Glider JS -->
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const gliderElement = document.getElementById('@gliderId');
+        const slideCounter = document.getElementById('slideCounter_@Model.Id');
+        const totalSlides = @images.Length;
+
+        const glider = new Glider(gliderElement, {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            draggable: true,
+            arrows: {
+                prev: '.glider-prev',
+                next: '.glider-next'
+            },
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+        gliderElement.addEventListener('glider-slide-visible', function (event) {
+            const current = event.detail.slide + 1;
+            slideCounter.textContent = current + " / " + totalSlides;
+        });
+    });
+</script>

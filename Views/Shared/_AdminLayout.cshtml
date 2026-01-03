@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>Admin Panel</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="~/css/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 overflow-y-scroll max-h-screen">
+    
+    <!-- Mobile Topbar -->
+    <header class="lg:hidden bg-gradient-to-r from-[#051b11] via-[#123d2d] to-[#a47e1f] text-white px-3 sm:px-4 py-3 flex justify-between items-center sticky top-0 z-40 shadow-md">
+        <h1 class="text-base sm:text-lg font-semibold truncate">Admin Panel</h1>
+        <button id="menuBtn" class="text-white focus:outline-none p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div id="sidebarBackdrop" class="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden transition-opacity duration-300" onclick="closeSidebar()"></div>
+
+    <!-- Grid Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-[20rem_1fr] grid-rows-[auto_1fr] min-h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar"
+               class="row-span-2 lg:row-span-full bg-gradient-to-r from-[#051b11] via-[#123d2d] to-[#a47e1f] text-white p-4 sm:p-5 lg:p-6 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50 fixed lg:static w-80 top-[56px] h-[calc(100dvh-56px)] lg:top-auto lg:h-auto overflow-y-auto lg:overflow-y-visible shadow-xl lg:shadow-none">
+            <!-- Brand -->
+            <div class="flex items-center gap-3 mb-4 lg:mb-6">
+                <div class="p-[3px] rounded-full bg-white/10 shadow-inner">
+                    <img src="~/img/logo.png"
+                         alt="Logo"
+                         class="brand-logo rounded-full object-cover ring-2 ring-white/20 shadow-lg" />
+                </div>
+                @* <div class="hidden md:block">
+                    <div class="text-lg lg:text-xl font-extrabold tracking-wide">Citrine Admin</div>
+                    <div class="text-white/70 text-xs">Manage content & settings</div>
+                </div> *@
+            </div>
+            <hr class="border-white/20 mb-3 lg:mb-4" />
+
+            <!-- Sidebar search (helps reveal hidden items quickly on mobile) -->
+            <div class="sticky top-0 z-10 -mx-4 sm:mx-0 px-4 sm:px-0 pt-1 pb-3 mb-2 bg-gradient-to-r from-[#051b11]/80 via-[#123d2d]/80 to-[#a47e1f]/80 backdrop-blur supports-[backdrop-filter]:backdrop-blur rounded-b">
+                <label for="menuSearch" class="sr-only">Search menu</label>
+                <div class="flex items-center gap-2 bg-white/10 rounded-lg px-3 py-2">
+                    <i data-lucide="search" class="w-4 h-4 text-white/80"></i>
+                    <input id="menuSearch" type="search" placeholder="Search…" class="bg-transparent placeholder-white/60 text-white text-sm focus:outline-none w-full" />
+                    <button type="button" id="clearMenuSearch" class="text-white/70 hover:text-white text-xs">Clear</button>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex flex-col gap-2 sm:gap-3 mt-1 lg:mt-5" id="sidebarNav">
+                <!-- Group: Content -->
+                <button type="button" id="btnContent" class="flex items-center justify-between px-2 py-2 text-white/90 hover:bg-white/10 rounded">
+                    <span class="text-xs tracking-wide">CONTENT</span>
+                    <i id="iconContent" data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                </button>
+                <div id="sectionContent" class="flex flex-col gap-2 sm:gap-3">
+                <a asp-action="Dashboard" asp-controller="Account" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0"></i>
+                    <span class="truncate">Dashboard</span>
+                </a>
+                <a asp-action="Blogs" asp-controller="Blog" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="file-text" class="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0"></i>
+                    <span class="truncate">Blogs</span>
+                </a>
+                <a asp-action="Teams" asp-controller="Team" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="users" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 flex-shrink-0"></i>
+                    <span class="truncate">Teams</span>
+                </a>
+                <a asp-action="Projects" asp-controller="Project" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="briefcase" class="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 flex-shrink-0"></i>
+                    <span class="truncate">Projects</span>
+                </a>
+                <a asp-action="Services" asp-controller="Service" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="layers" class="w-4 h-4 sm:w-5 sm:h-5 text-teal-400 flex-shrink-0"></i>
+                    <span class="truncate">Services</span>
+                </a>
+                <a asp-action="SubServices" asp-controller="SubService" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="list" class="w-4 h-4 sm:w-5 sm:h-5 text-pink-400 flex-shrink-0"></i>
+                    <span class="truncate">Sub Services</span>
+                </a>
+                <a asp-action="Solutions" asp-controller="Solution" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="puzzle" class="w-4 h-4 sm:w-5 sm:h-5 text-indigo-400 flex-shrink-0"></i>
+                    <span class="truncate">Solutions</span>
+                </a>
+                <a asp-action="SubSolutions" asp-controller="SubSolution" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="grid" class="w-4 h-4 sm:w-5 sm:h-5 text-red-400 flex-shrink-0"></i>
+                    <span class="truncate">Sub Solutions</span>
+                </a>
+                </div>
+
+                <!-- Group: Organization -->
+                <button type="button" id="btnOrg" class="mt-1 flex items-center justify-between px-2 py-2 text-white/90 hover:bg-white/10 rounded">
+                    <span class="text-xs tracking-wide">ORGANIZATION</span>
+                    <i id="iconOrg" data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                </button>
+                <div id="sectionOrg" class="flex flex-col gap-2 sm:gap-3">
+                <a asp-action="Users" asp-controller="User" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="user" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 flex-shrink-0"></i>
+                    <span class="truncate">Users</span>
+                </a>
+                <a asp-action="Testimonials" asp-controller="Testimonial" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 flex-shrink-0"></i>
+                    <span class="truncate">Testimonials</span>
+                </a>
+                <a asp-action="Contacts" asp-controller="Contact" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="phone" class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 flex-shrink-0"></i>
+                    <span class="truncate">Contact</span>
+                </a>
+                <a asp-action="Partners" asp-controller="Partner" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="handshake" class="w-4 h-4 sm:w-5 sm:h-5 text-fuchsia-400 flex-shrink-0"></i>
+                    <span class="truncate">Partners</span>
+                </a>
+                    <a asp-action="Patrons" asp-controller="Patrons" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="handshake" class="w-4 h-4 sm:w-5 sm:h-5 text-fuchsia-400 flex-shrink-0"></i>
+                        <span class="truncate">Patrons</span>
+                </a>
+
+                <a asp-action="Careers" asp-controller="Career" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-white/10 active:bg-white/15 transition-all">
+                    <i data-lucide="briefcase-business" class="w-4 h-4 sm:w-5 sm:h-5 text-lime-400 flex-shrink-0"></i>
+                    <span class="truncate">Career</span>
+                </a>
+                </div>
+            </nav>
+            
+            <!-- Close Button for Mobile -->
+            <button onclick="closeSidebar()" class="lg:hidden mt-auto mb-4 p-2 hover:bg-white/10 rounded-lg transition-colors w-full flex items-center justify-center gap-2 text-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+                <span>Close Menu</span>
+            </button>
+        </aside>
+
+        <!-- Topbar for large screens -->
+        <header class="hidden lg:flex items-center justify-between bg-gradient-to-r from-[#051b11] via-[#123d2d] to-[#a47e1f] text-white px-4 xl:px-6 py-3 xl:py-4 shadow-md">
+            <!-- Left: Page title -->
+            <div class="flex items-center gap-3">
+                <h1 class="text-lg xl:text-xl font-semibold">
+                    @(ViewData["Title"] != null ? ViewData["Title"] : "Dashboard")
+                </h1>
+                <span class="hidden xl:inline-block text-white/70 text-sm">•</span>
+                <span class="hidden xl:inline-block text-white/70 text-sm">Citrine Technologies</span>
+            </div>
+
+            <!-- Right: Search + Actions -->
+            <div class="flex items-center gap-3 xl:gap-4">
+                <!-- Search (desktop only) -->
+                @* <div class="hidden md:flex items-center bg-white/10 rounded-lg px-3 py-2 focus-within:bg-white/15 transition">
+                    <i data-lucide="search" class="w-4 h-4 text-white/80 mr-2"></i>
+                    <input type="search"
+                           placeholder="Search..."
+                           class="bg-transparent placeholder-white/60 text-white text-sm focus:outline-none w-48 xl:w-64" />
+                </div> *@
+
+                <!-- Notification -->
+                @* <button class="relative p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="Notifications">
+                    <i data-lucide="bell" class="w-5 h-5"></i>
+                    <span class="absolute -top-0.5 -right-0.5 inline-flex items-center justify-center w-4 h-4 text-[10px] rounded-full bg-red-500 text-white ring-2 ring-[#123d2d]">3</span>
+                </button> *@
+
+                <!-- Profile -->
+                <div class="flex items-center gap-2">
+                    <span class="hidden xl:inline text-sm"> @ViewBag.MySession</span>
+                    <img src="~/img/avt.jpg"
+                         alt="Avatar"
+                         class="rounded-full w-8 h-8 xl:w-10 xl:h-10 object-cover border-2 border-white/30 shadow-md ring-2 ring-white/20" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 overflow-x-hidden">
+            <div class="max-w-7xl mx-auto space-y-6">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const sidebar = document.getElementById("sidebar");
+        const sidebarBackdrop = document.getElementById("sidebarBackdrop");
+
+        function openSidebar() {
+            sidebar.classList.remove("-translate-x-full");
+            sidebarBackdrop.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add("-translate-x-full");
+            sidebarBackdrop.classList.add("hidden");
+            document.body.style.overflow = "";
+        }
+
+        if (menuBtn) {
+            menuBtn.addEventListener("click", () => {
+                if (sidebar.classList.contains("-translate-x-full")) {
+                    openSidebar();
+                } else {
+                    closeSidebar();
+                }
+            });
+        }
+
+        // Sidebar search filter
+        const menuSearch = document.getElementById("menuSearch");
+        const clearMenuSearch = document.getElementById("clearMenuSearch");
+        const navLinks = Array.from(document.querySelectorAll("#sidebarNav a"));
+
+        function applyMenuFilter(query) {
+            const q = (query || "").trim().toLowerCase();
+            navLinks.forEach(link => {
+                const text = link.textContent.trim().toLowerCase();
+                const match = text.includes(q);
+                link.classList.toggle("hidden", q && !match);
+            });
+        }
+
+        if (menuSearch) {
+            menuSearch.addEventListener("input", (e) => applyMenuFilter(e.target.value));
+        }
+        if (clearMenuSearch) {
+            clearMenuSearch.addEventListener("click", () => {
+                if (menuSearch) {
+                    menuSearch.value = "";
+                }
+                applyMenuFilter("");
+                menuSearch?.focus();
+            });
+        }
+
+        // Accordion toggles
+        function setupAccordion(btnId, sectionId, iconId) {
+            const btn = document.getElementById(btnId);
+            const section = document.getElementById(sectionId);
+            const icon = document.getElementById(iconId);
+            if (!btn || !section) return;
+            let open = true;
+            const updateIcon = () => {
+                if (icon) icon.style.transform = open ? "rotate(0deg)" : "rotate(-90deg)";
+            };
+            updateIcon();
+            btn.addEventListener("click", () => {
+                open = !open;
+                section.classList.toggle("hidden", !open);
+                updateIcon();
+            });
+        }
+
+        setupAccordion("btnContent", "sectionContent", "iconContent");
+        setupAccordion("btnOrg", "sectionOrg", "iconOrg");
+
+        // Close sidebar on ESC key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && !sidebar.classList.contains("-translate-x-full")) {
+                closeSidebar();
+            }
+        });
+
+        // Close sidebar when clicking outside on mobile
+        if (sidebarBackdrop) {
+            sidebarBackdrop.addEventListener("click", closeSidebar);
+        }
+
+        // Close sidebar when clicking a nav link on mobile
+        document.querySelectorAll("#sidebar nav a").forEach(link => {
+            link.addEventListener("click", () => {
+                if (window.innerWidth < 1024) {
+                    closeSidebar();
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 1024) {
+                sidebar.classList.remove("-translate-x-full");
+                sidebarBackdrop.classList.add("hidden");
+                document.body.style.overflow = "";
+            } else if (!sidebar.classList.contains("-translate-x-full")) {
+                // Sidebar is open on resize to mobile - close it
+                closeSidebar();
+            }
+        });
+
+        // Initialize icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
+
+

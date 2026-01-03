@@ -1,0 +1,87 @@
+﻿@model IEnumerable<CitrineTechData.DataModel.Projects>
+
+
+@{
+    ViewData["Title"] = "Service Details";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<section class="hero1 bg-gradient-to-r from-[#051b11] via-[#123d2d] to-[#a47e1f] relative px-2 h-100 overflow-hidden">
+    <div class="max-w-7xl mx-auto text-white sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-sm-2">
+
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2 flex flex-col items-center text-center text-white py-12 z-10">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-2">All Projects</h2>
+            <p class="text-yellow-400 scroll-animate opacity-0" data-animate="slide-in-left">
+                @* <a asp-action="Index">Home</a> *@
+                @* <span class="text-white"> – @ViewData["Title"]</span> *@
+            </p>
+        </div>
+
+        <!-- Right Image -->
+        <div class="w-full md:w-1/2 flex items-center justify-center relative overflow-hidden">
+            <img id="scrollImage"
+                 src="~/img/Fun.png"
+                 alt="Engineers"
+                 class="w-full h-auto transition-transform duration-300 ease-out will-change-transform">
+        </div>
+    </div>
+</section>
+
+
+<!-- Service Cards -->
+<section class="mx-3 py-20">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+        @foreach (var item in Model)
+        {
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+                <div class="w-100 h-48 overflow-hidden">
+                    <img src="/@item.ImageUrl" class="w-full h-full object-cover object-center" />
+                </div>
+
+
+                <div class="p-5">
+                    <p class="text-xs text-gray-500">@item.SubTitle</p>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1">@item.Name</h3>
+                    <div class="relative h-24 overflow-hidden">
+                        <p class="text-sm text-black text-justify">
+                            @item.Description
+                        </p>
+                        <div class="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#374562] to-transparent"></div>
+                    </div>
+
+
+                    <a href="@Url.Action("PDetails", "Home", new { Id = item.Id })"
+                       class="inline-block mt-4 text-sm bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-blue-700">
+                        Read Detail
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+@* <section class="mx-3 py-20">
+    <div class="max-w-7xl mx-auto space-y-6">
+        @foreach (var item in Model)
+        {
+            <div class="flex bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition">
+                <img src="/@item.ImageUrl" class="w-48 object-cover" />
+
+                <div class="p-6 flex-1">
+                    <h3 class="text-2xl font-bold text-gray-900">@item.Name</h3>
+                    <p class="text-gray-500 text-sm">@item.SubTitle</p>
+
+                    <p class="text-gray-700 mt-3 text-sm">
+                        @item.Description
+                    </p>
+
+                    <a href="@Url.Action("PDetails", "Home", new { Id = item.Id })"
+                       class="inline-block mt-5 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                        Read Detail
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+ *@

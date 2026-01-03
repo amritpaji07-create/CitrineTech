@@ -1,0 +1,130 @@
+﻿@model CitrineTechData.ViewModel.CommonViewModel
+
+
+<!-- Services Dropdown          hover:bg-[#FCA311]-->
+<div class="relative group">
+    <button type="button"
+            class="hover:text-[#FCA311] font-semibold flex items-center gap-1"
+            onclick="toggleDropdown('servicesDropdown')"
+            aria-haspopup="true" aria-expanded="false">
+        Services 
+    </button>
+
+    <div id="servicesDropdown"
+         class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded z-50 min-w-[220px]">
+        <ul class="py-2">
+            @foreach (var service in Model.Service)
+            {
+                <li class="relative group/item">
+                    <a asp-action="Details" asp-controller="Service" asp-route-id="@service.Id"
+                       class="flex justify-between items-center px-4 py-2 text-gray-700 text-lg">
+                        @service.Name
+                        @* @if (service.SubServices != null && service.SubServices.Any())
+                        {
+                            <span class="ml-2 text-[#FCA311]">›</span>
+                        } *@
+                    </a>
+
+                    @* @if (service.SubServices != null && service.SubServices.Any())
+                    {
+                        <div class="absolute left-full top-0 hidden group-hover/item:block bg-white shadow-lg rounded min-w-[200px] z-50 text-lg">
+                            <ul class="py-2">
+                                @foreach (var sub in service.SubServices)
+                                {
+                                    <li>
+                                        <a href="#"
+                                           class="block px-4 py-2 text-gray-700 hover:bg-yellow-200">
+                                            @sub.Name
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    } *@
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<!-- Solutions Dropdown -->
+<div class="relative group">
+    <button type="button"
+            class="hover:text-[#FCA311] font-semibold flex items-center gap-1"
+            onclick="toggleDropdown('solutionsDropdown')"
+            aria-haspopup="true" aria-expanded="false">
+        Solutions 
+    </button>
+
+    <div id="solutionsDropdown"
+         class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded z-50 min-w-[220px]">
+        <ul class="py-2">
+            @foreach (var solution in Model.Solutions)
+            {
+                <li class="relative group/item">
+                    <a asp-action="Details" asp-controller="Solution" asp-route-id="@solution.Id"
+                       class="flex justify-between items-center px-4 py-2 text-gray-700 text-lg">
+                        @solution.Name
+                        @* @if (solution.SubSolutions != null && solution.SubSolutions.Any())
+                        {
+                            <span class="ml-2 text-[#FCA311]">›</span>
+                        } *@
+                    </a>
+
+                   @*  @if (solution.SubSolutions != null && solution.SubSolutions.Any())
+                    {
+                        <div class="absolute left-full top-0 hidden group-hover/item:block bg-white shadow-lg rounded min-w-[200px] z-50 text-lg">
+                            <ul class="py-2">
+                                @foreach (var sub in solution.SubSolutions)
+                                {
+                                    <li>
+                                        <a asp-controller="Solution" asp-action="Details" asp-route-id="@sub.Id"
+                                        
+                                           class="block px-4 py-2 text-gray-700 hover:bg-yellow-200">
+                                            @sub.Name
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    } *@
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+@* <script>
+    function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+
+        // Close any other open dropdowns
+        document.querySelectorAll('[id$="Dropdown"]').forEach(el => {
+            if (el.id !== id) {
+                el.classList.add("hidden");
+            }
+        });
+
+        // Toggle current dropdown
+        dropdown.classList.toggle("hidden");
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", function (e) {
+        const isDropdown = e.target.closest("[id$='Dropdown']");
+        const isButton = e.target.closest("button[onclick^='toggleDropdown']");
+        if (!isDropdown && !isButton) {
+            document.querySelectorAll('[id$="Dropdown"]').forEach(el => el.classList.add("hidden"));
+        }
+    });
+
+    // Keyboard accessibility (Esc closes dropdowns)
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            document.querySelectorAll('[id$="Dropdown"]').forEach(el => el.classList.add("hidden"));
+        }
+    });
+</script>
+ *@
+

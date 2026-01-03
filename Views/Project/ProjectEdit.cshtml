@@ -1,0 +1,85 @@
+﻿@model CitrineTechData.ViewModel.ProjectViewModel
+
+@{
+    ViewData["Title"] = "ProjectEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var images = Model.PhotoPath?.Split(",", StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>();
+    var gliderId = "productSlider_" + Model.Id;
+}
+
+<div class="max-w-7xl mx-auto mt-6 px-4">
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="bg-gray-800 text-white px-6 py-4">
+            <h4 class="text-xl font-semibold">Edit Project</h4>
+        </div>
+        <div class="p-6">
+            <form asp-action="ProjectEdit" enctype="multipart/form-data" class="space-y-6">
+                <div asp-validation-summary="ModelOnly" class="text-red-600 text-sm"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <!-- Title -->
+                <div>
+                    <label asp-for="Name" class="block text-sm font-medium text-gray-700"></label>
+                    <input asp-for="Name" class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+                    <span asp-validation-for="Name" class="text-red-600 text-sm"></span>
+                </div>
+
+                <!-- SubTitle -->
+                <div>
+                    <label asp-for="SubTitle" class="block text-sm font-medium text-gray-700"></label>
+                    <input asp-for="SubTitle" class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+                    <span asp-validation-for="SubTitle" class="text-red-600 text-sm"></span>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label asp-for="Description" class="block text-sm font-medium text-gray-700"></label>
+                    <textarea asp-for="Description" id="Description"  class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    <span asp-validation-for="Description" class="text-red-600 text-sm"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Index" class="block text-sm font-medium text-gray-700"></label>
+                    <input asp-for="Index" type="number"  class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></input>
+                    <span asp-validation-for="Index" class="text-red-600 text-sm"></span>
+                </div>
+
+               
+                <!-- Existing Images -->
+                @if (Model.ExistingImages != null && Model.ExistingImages.Any())
+                {
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Existing Images</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                            @for (int i = 0; i < Model.ExistingImages.Count; i++)
+                            {
+                                <div class="border rounded p-2">
+                                    <img src="~/@Model.ExistingImages[i]" class="w-full h-24 object-cover rounded" />
+                                    <div class="mt-2 flex items-center space-x-2">
+                                        <input type="checkbox" name="ImagesToDelete" value="@Model.ExistingImages[i]" class="form-checkbox text-blue-600" />
+                                        <label class="text-sm text-gray-700">Delete</label>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+
+                <!-- Upload Photo -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Upload Photo</label>
+                    <input asp-for="Photos" type="file" multiple class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+
+                <!-- Image Preview -->
+                <div id="imagePreviewContainer" class="flex flex-wrap gap-4 mt-4"></div>
+
+                <!-- Buttons -->
+                <div class="flex justify-between mt-6">
+                    <input type="submit" value="Update" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition" />
+                    <a asp-action="Projects" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+﻿@model CitrineTechData.ViewModel.SubSolutionViewModel
+
+
+@{
+    ViewData["Title"] = @Model.Name;
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!-- Hero Section -->
+<section class="hero mx-3 bg-gradient-to-r from-[#051b11] via-[#123d2d] to-[#a47e1f] relative px-2 lg:h-90 rounded-2xl">
+    <div class="max-w-7xl mx-auto text-white sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-sm-2">
+
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2 flex flex-col items-center text-center text-white py-12">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-2"> @ViewData["Title"]</h2>
+            <p class="text-lime-400">
+                <a asp-action="Index"> Home </a><span class="text-white">–  @ViewData["Title"]</span>
+            </p>
+        </div>
+
+        <!-- Right Image -->
+        <div class="w-full md:w-1/2 items-center">
+            <img src="~/img/1-Photoroom-removebg-preview.png"
+                 alt="Engineers"
+                 class="w-full h-auto animate-wave">
+        </div>
+    </div>
+</section>
+
+
+<div class="max-w-5xl mx-auto p-6">
+
+    <!-- Images -->
+    <div class="flex flex-wrap justify-center gap-4">
+        @foreach (var img in Model.ImagePaths)
+        {
+            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4">
+                <img src="~/@img" alt="@Model.Name" class="rounded shadow-sm mx-auto" />
+            </div>
+        }
+    </div>
+
+
+    <!-- Title -->
+    <h1 class="text-3xl font-bold text-gray-800 mb-4 mt-5 text-center">
+        @Model.Name
+    </h1>
+
+
+    <!-- Description -->
+    <div class="prose max-w-none mb-6 mt-5 text-justify">
+        @Html.Raw(Model.Description ?? "No description available.")
+    </div>
+
+
+
+
+    <!-- Back Button -->
+    @* <div class="mt-6">
+    <a asp-action="Solutions" asp-controller="Home" asp-route-id="@Model.SubSolution?.SolutionId"
+    class="px-4 py-2 bg-lime-500 hover:bg-lime-600 text-white rounded-lg">
+    ← Back to Solution
+    </a>
+    </div> *@
+</div>

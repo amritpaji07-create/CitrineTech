@@ -1,0 +1,110 @@
+﻿@model CitrineTechData.ViewModel.SubServiceViewModel
+
+@{
+    ViewData["Title"] = "SubService Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    var images = Model.ImagePaths ?? new List<string>();
+    var gliderId = "productSlider_" + Model.Id;
+}
+
+<div class="max-w-6xl mx-auto mt-8 px-4">
+    <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+
+        <!-- Header -->
+        <div class="bg-blue-600 text-black px-6 py-4">
+            <h2 class="text-2xl font-semibold">🧩 SubService Details</h2>
+        </div>
+
+        <!-- Image Carousel -->
+        @if (images.Any())
+        {
+            <div class="py-6 text-center">
+                <!-- Glider container -->
+                <div id="@gliderId" class="glider">
+                    @foreach (var img in images)
+                    {
+                        <div class="glider-slide p-2 border rounded-lg bg-gray-100 flex flex-row">
+                            <img src="@Url.Content("~/" + img.Trim())"
+                                 alt="Gallery Image"
+                                 class="w-full max-w-md h-64 object-cover rounded-md mx-auto" />
+                        </div>
+                    }
+                </div>
+
+                <!-- Controls -->
+                <div class="flex justify-center items-center mt-4 gap-4">
+                    <button class="glider-prev px-4 py-2 bg-gray-300 rounded hover:bg-gray-400" aria-label="Previous Slide">«</button>
+                    <button class="glider-next px-4 py-2 bg-gray-300 rounded hover:bg-gray-400" aria-label="Next Slide">»</button>
+                </div>
+
+                <!-- Slide counter -->
+                <div class="mt-2 text-sm text-gray-600" id="slideCounter_@Model.Id">1 / @images.Count</div>
+            </div>
+
+            
+        }
+
+        <!-- Details Section -->
+        <div class="px-6 py-6 space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700">
+                <div>
+                    <span class="font-semibold block text-sm text-gray-600">Title:</span>
+                    <div class="mt-1">@Model.Name</div>
+                </div>
+                <div>
+                    <span class="font-semibold block text-sm text-gray-600">Service Name:</span>
+                    <div class="mt-1">@Model.ServiceName</div>
+                </div>
+            </div>
+
+            <div>
+                <span class="font-semibold text-gray-800 block mb-2">Description:</span>
+                <div class="bg-gray-50 p-4 rounded border text-gray-700 prose max-w-none">
+                    @Html.Raw(Model.Description)
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-6 py-4 bg-gray-100 flex flex-col sm:flex-row justify-between gap-4">
+            <a asp-action="SubServiceEdit" asp-route-id="@Model.Id"
+               class="border-1 border-gray text-black px-4 py-2 rounded hover:bg-yellow-600 text-center">
+                ✏️ Edit
+            </a>
+            <a asp-action="SubServices"
+               class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 text-center transition">
+                ← Back to List
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Glider JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const totalSlides = @images.Count;
+        const gliderElement = document.getElementById('@gliderId');
+        const slideCounter = document.getElementById('slideCounter_@Model.Id');
+
+        if (totalSlides > 1) {
+            const glider = new Glider(gliderElement, {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: null,
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+
+            // update counter on change
+            gliderElement.addEventListener('glider-slide-visible', function (event) {
+                slideCounter.textContent = (event.detail.slide + 1) + ' / ' + totalSlides;
+            });
+        }
+    });
+</script>

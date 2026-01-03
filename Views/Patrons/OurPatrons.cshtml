@@ -1,0 +1,54 @@
+﻿@model IEnumerable<CitrineTechData.DataModel.Patrons>
+
+@{
+    ViewData["Title"] = "Patrons";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!-- HERO Section -->
+<section class="hero1 relative px-2 h-100 overflow-hidden mb-8">
+    <div class="max-w-7xl mx-auto sm:px-6 py-12 flex flex-col md:flex-row items-center justify-between">
+        <div class="w-full md:w-1/2 text-center">
+            <h2 class="text-5xl font-bold mb-2">@ViewData["Title"]</h2>
+            <p class="text-lg">
+                <a asp-action="Index">Home</a>
+                <span class="text-white"> – @ViewData["Title"]</span>
+            </p>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center">
+            <img src="~/img/Fun.png" alt="Engineers" class="w-full max-w-md transition-transform duration-500">
+        </div>
+    </div>
+</section>
+
+
+<div class="max-w-7xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
+        Our Patrons
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        @foreach (var Patrons in Model)
+        {
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
+
+                <!-- Logo -->
+                <div class="h-48 bg-gray-50 flex items-center justify-center overflow-hidden">
+                    @if (!string.IsNullOrEmpty(Patrons.PatronLogo))
+                    {
+                        <img src="~/@Patrons.PatronLogo" alt="@Patrons.Name" class="w-full h-full object-contain p-4" />
+                    }
+                    else
+                    {
+                        <span class="text-gray-400 text-sm">No Logo</span>
+                    }
+                </div>
+
+                <!-- Name -->
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">@Patrons.Name</h3>
+                </div>
+            </div>
+        }
+    </div>
+</div>

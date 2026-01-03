@@ -1,0 +1,182 @@
+﻿@{
+    ViewData["Title"] = "Digital Solutions";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+
+
+
+<style>
+    .scroll-zoom {
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    #scrollBlogContent {
+        transform-origin: center;
+    }
+
+</style>
+
+<section class="hero1 mx-3 bg-gradient-to-r from-[#051b11] via-[#123d2d] to-[#a47e1f] relative px-2 h-100 rounded-2xl overflow-hidden">
+    <div class="max-w-7xl mx-auto text-white sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-sm-2">
+
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2 flex flex-col items-center text-center text-white py-12 z-10">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-2">@ViewData["Title"]</h2>
+            <p class="text-yellow-400 scroll-animate opacity-0" data-animate="slide-in-left">
+                <a asp-action="Index">Home</a>
+                <span class="text-white"> – @ViewData["Title"]</span>
+            </p>
+        </div>
+
+        <!-- Right Image -->
+        <div class="w-full md:w-1/2 flex items-center justify-center relative overflow-hidden">
+            <img id="scrollImage"
+                 src="~/img/Fun.png"
+                 alt="Engineers"
+                 class="w-full h-auto transition-transform duration-300 ease-out will-change-transform">
+        </div>
+    </div>
+</section>
+
+<script>
+    window.addEventListener("scroll", function () {
+        // === Image Animation ===
+        const image = document.getElementById("scrollImage");
+        const heroSection = document.querySelector(".hero1");
+        const heroRect = heroSection.getBoundingClientRect();
+
+        let imageProgress = 1 - (heroRect.bottom / window.innerHeight);
+        imageProgress = Math.min(Math.max(imageProgress, 0), 1);
+
+        const imageScale = 1 + imageProgress * 0.8;   // 1 → 1.8
+        const imageOpacity = 1 - imageProgress * 0.6; // 1 → 0.4
+
+        image.style.transform = `scale(${imageScale})`;
+        image.style.opacity = imageOpacity;
+
+
+        // === Blog Content Animation ===
+        const content = document.getElementById("scrollBlogContent");
+        const blogSection = document.querySelector("#scrollBlogContent"); // ⚠️ make sure your blog section has class="blog"
+        if (content && blogSection) {
+            const blogRect = blogSection.getBoundingClientRect();
+
+            let contentProgress = 1 - (blogRect.bottom / window.innerHeight);
+            contentProgress = Math.min(Math.max(contentProgress, 0), 1);
+
+            const translateY = contentProgress * -40; // move upward
+            const contentScale = 1 + contentProgress * 0.1; // 1 → 1.1
+            const contentOpacity = 1 - contentProgress * 0.6; // 1 → 0.4
+
+            content.style.transform = `translateY(${translateY}px) scale(${contentScale})`;
+            content.style.opacity = contentOpacity;
+        }
+    });
+</script>
+
+@* <section class="relative h-[70vh] bg-cover bg-center" style="background-image: url('/assets/images/overview/Blockchain.png');">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Digital Solutions</h1>
+        <p class="text-lg md:text-xl max-w-2xl">Empowering your business with cutting-edge digital technologies that drive innovation and growth.</p>
+    </div>
+</section> *@
+
+<!-- About Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center px-6">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">About Our Digital Solutions</h2>
+        <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+            Our Digital Solutions are designed to help organizations embrace digital transformation.
+            From developing custom software to implementing automation, we ensure your business stays ahead
+            in today’s fast-changing technology landscape.
+        </p>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Key Features</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature Card -->
+            <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+                <div class="w-16 h-16 flex items-center justify-center bg-yellow-400 text-black rounded-full mb-4">
+                    <i class="fa-solid fa-globe text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Web & App Development</h3>
+                <p class="text-gray-600">Build scalable, secure, and user-friendly digital platforms tailored to your business needs.</p>
+            </div>
+
+            <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+                <div class="w-16 h-16 flex items-center justify-center bg-yellow-400 text-black rounded-full mb-4">
+                    <i class="fa-solid fa-chart-line text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Digital Transformation</h3>
+                <p class="text-gray-600">Modernize your operations with advanced automation and smart digital tools.</p>
+            </div>
+
+            <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+                <div class="w-16 h-16 flex items-center justify-center bg-yellow-400 text-black rounded-full mb-4">
+                    <i class="fa-solid fa-shield-halved text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Cybersecurity</h3>
+                <p class="text-gray-600">Protect your digital ecosystem with end-to-end security solutions and risk management.</p>
+            </div>
+
+            <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+                <div class="w-16 h-16 flex items-center justify-center bg-yellow-400 text-black rounded-full mb-4">
+                    <i class="fa-solid fa-cloud text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Cloud Integration</h3>
+                <p class="text-gray-600">Seamlessly migrate and manage your infrastructure in the cloud for enhanced flexibility.</p>
+            </div>
+
+            <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+                <div class="w-16 h-16 flex items-center justify-center bg-yellow-400 text-black rounded-full mb-4">
+                    <i class="fa-solid fa-robot text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Automation & AI</h3>
+                <p class="text-gray-600">Leverage artificial intelligence and automation to boost productivity and decision-making.</p>
+            </div>
+
+            <div class="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+                <div class="w-16 h-16 flex items-center justify-center bg-yellow-400 text-black rounded-full mb-4">
+                    <i class="fa-solid fa-users text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Customer Experience</h3>
+                <p class="text-gray-600">Enhance engagement through intuitive design and personalized digital interactions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technologies Section -->
+<section class="py-16 bg-gradient-to-r from-[#051b11] via-[#123d2d] to-[#a47e1f] text-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-8">Technologies We Use</h2>
+        <p class="text-lg max-w-3xl mx-auto mb-12 text-gray-200">
+            We combine modern technologies and agile methodologies to deliver secure, scalable, and future-ready digital solutions.
+        </p>
+        <div class="flex flex-wrap justify-center gap-8">
+            <div class="bg-white/10 px-6 py-3 rounded-full">React / Angular</div>
+            <div class="bg-white/10 px-6 py-3 rounded-full">.NET Core</div>
+            <div class="bg-white/10 px-6 py-3 rounded-full">Azure / AWS</div>
+            <div class="bg-white/10 px-6 py-3 rounded-full">Node.js</div>
+            <div class="bg-white/10 px-6 py-3 rounded-full">AI & ML</div>
+            <div class="bg-white/10 px-6 py-3 rounded-full">Power BI</div>
+        </div>
+    </div>
+</section>
+
+<!-- Call To Action -->
+<section class="py-16 bg-yellow-400 text-center text-black">
+    <h2 class="text-3xl font-bold mb-4">Transform Your Business Digitally</h2>
+    <p class="text-lg mb-6">Let us help you bring your digital vision to life with innovation and expertise.</p>
+    <a href="/Contact" class="inline-block bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition">
+        Get in Touch
+    </a>
+</section>

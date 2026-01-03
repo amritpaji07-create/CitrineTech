@@ -1,0 +1,542 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <title>@ViewBag.Title</title>
+
+    <!-- CSS Libraries -->
+    <!-- Icon Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <link href="~/css/output.css" rel="stylesheet">
+    <link href="~/New_assets/css/animate.css" rel="stylesheet">
+    <link href="~/css/site.css" />
+
+    <style>       
+       
+        .hero {
+            border-bottom-left-radius: 0.5rem; /* 8px */
+            border-bottom-right-radius: 0.5rem; /* 8px */
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            width: 100%;
+            background-color: transparent;
+            transform: translateY(-10px); /* slight offset for animation */
+            transition: transform 0.4s ease, border-bottom 0.4s ease, background-color 0.4s ease;
+        }
+
+        .hero {
+            padding-top: 100px; /* match your header height */
+        }
+
+        /* ===== Header (Oxford–Orange Palette) ===== */
+        header {
+            background-color: transparent;
+            transition: all 0.4s ease;
+        }
+
+        .header-scrolled {
+            background: linear-gradient(90deg, #14213D, #000000);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Fade Animation for Sections */
+        .fade-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+            .fade-section.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        /* ===== Footer Styling (Oxford–Orange Palette) ===== */
+        .footer-bg {
+            /* background: linear-gradient(135deg, #14213D, #000000, #14213D); */
+            /* color: #E5E5E5; */
+            /* color: black; */
+            background: linear-gradient(135deg, var(--oxford-blue-dark) 0%, var(--oxford-blue) 50%, var(--oxford-blue-light) 100%);
+            /* border-radius: 1.5rem; */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .footer-heading {
+            /* color: #FCA311; */
+            border-bottom: 2px solid #FCA311;
+            display: inline-block;
+            padding-bottom: 0.25rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-text-highlight {
+            /* color: #FCA311; */
+        }
+
+        .footer-link {
+            /* color: #E5E5E5; */
+            transition: 0.3s ease;
+        }
+
+            .footer-link:hover {
+                /* color: #FCA311; */
+            }
+
+        .footer-icon {
+            color: #FFFFFF;
+            transition: 0.3s ease;
+        }
+
+            .footer-icon:hover {
+                /* color: #FCA311; */
+                transform: scale(1.1);
+            }
+
+        .footer-bottom {
+            border-top: 1px solid #FCA311;
+            color: #CCCCCC;
+        }
+
+            .footer-bottom a:hover {
+                color: #FCA311;
+            }
+
+            .footer-bottom span {
+                color: #FCA311;
+            }
+
+        /* === Common Palette === */
+        :root {
+            --oxford-blue-dark: #0c1425;
+            --oxford-blue: #14213d;
+            --oxford-blue-light: #29447e;
+            --orange: #fca311;
+            --orange-light: #fec871;
+            --platinum: #e5e5e5;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        section {
+            scroll-margin-top: 100px;
+        }
+
+        /* === HERO SECTION === */
+        .hero1 {
+            background: linear-gradient(135deg, var(--oxford-blue-dark) 0%, var(--oxford-blue) 50%, var(--oxford-blue-light) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .hero1::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(circle at top right, rgba(252,163,17,0.25), transparent 70%), radial-gradient(circle at bottom left, rgba(20,33,61,0.4), transparent 70%);
+                opacity: 0.8;
+            }
+
+            .hero1 h2 {
+                color: var(--orange);
+                text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+            }
+
+            .hero1 a {
+                color: var(--orange);
+                font-weight: 600;
+                transition: color 0.3s ease;
+            }
+
+                .hero1 a:hover {
+                    color: var(--orange-light);
+                    text-decoration: underline;
+                }
+
+        /* === ABOUT SECTION === */
+        .about-section {
+            /* background: linear-gradient(160deg, #ffffff, #f9f9f9, #f0f4f8); */
+            color: var(--oxford-blue);
+            /* border: 1px solid rgba(20, 33, 61, 0.1); */
+        }
+
+        .about-tag {
+            border: 1px solid var(--orange);
+            color: var(--oxford-blue);
+            background: rgba(252, 163, 17, 0.1);
+        }
+
+        .about-title span {
+            color: var(--orange);
+            text-shadow: 0 1px 6px rgba(252, 163, 17, 0.2);
+        }
+
+        .about-card-dark {
+            background: linear-gradient(145deg, var(--oxford-blue), var(--oxford-blue-light));
+            color: var(--platinum);
+            box-shadow: 0 10px 25px rgba(20, 33, 61, 0.4);
+            border: 1px solid rgba(252, 163, 17, 0.3);
+        }
+
+        .about-card-light {
+            background: linear-gradient(145deg, #ffffff, #f7f9fc);
+            color: var(--oxford-blue);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(252, 163, 17, 0.2);
+        }
+
+            .about-card-dark:hover, .about-card-light:hover {
+                transform: translateY(-5px);
+            }
+
+        /* === WHY CHOOSE SECTION === */
+        .why-section {
+            /* background: linear-gradient(150deg, #ffffff, #f5f7fa); */
+            color: var(--oxford-blue);
+            /* position: relative; */
+        }
+
+            .why-section::before {
+                content: "";
+                position: absolute;
+                top: -50px;
+                left: 0;
+                right: 0;
+                height: 100px;
+                background: linear-gradient(to bottom, rgba(20,33,61,0.05), transparent);
+            }
+
+        .why-heading {
+            color: var(--oxford-blue);
+            text-shadow: 0 2px 6px rgba(41,68,126,0.2);
+        }
+
+        .feature-box {
+            background: linear-gradient(160deg, var(--oxford-blue), var(--oxford-blue-light));
+            color: var(--platinum);
+            box-shadow: 0 8px 20px rgba(41,68,126,0.5);
+            border-left: 4px solid var(--orange);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .feature-box:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 10px 25px rgba(252, 163, 17, 0.4);
+            }
+
+        .feature-index {
+            background: var(--orange);
+            color: var(--black);
+            font-weight: bold;
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+
+        /* === TEAM SECTION === */
+        .team-section {
+            background: linear-gradient(135deg, #f5f7fa, #ffffff);
+            color: var(--oxford-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .team-section::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(circle at 80% 20%, rgba(41,68,126,0.08), transparent 60%);
+            }
+
+        .team-card {
+            background: linear-gradient(180deg, var(--oxford-blue), var(--oxford-blue-light));
+            color: var(--platinum);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.3s ease;
+            border: 1px solid rgba(252, 163, 17, 0.3);
+        }
+
+            .team-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 10px 30px rgba(41, 68, 126, 0.5);
+                border-color: var(--orange);
+            }
+
+            .team-card a {
+                border-color: var(--orange);
+                color: var(--orange);
+                transition: all 0.3s ease;
+            }
+
+                .team-card a:hover {
+                    background: var(--orange);
+                    color: var(--oxford-blue);
+                }
+
+        /* === BUTTON === */
+        .gold-btn {
+            background: linear-gradient(90deg, var(--orange), var(--orange-light));
+            color: var(--oxford-blue);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(252, 163, 17, 0.3);
+        }
+
+            .gold-btn:hover {
+                transform: scale(1.05);
+                background: linear-gradient(90deg, var(--orange-light), var(--orange));
+                box-shadow: 0 8px 20px rgba(252, 163, 17, 0.5);
+            }
+    </style>
+
+</head>
+<body class="">
+
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header class="text-white sticky top-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-5 py-6">
+            <!-- Logo -->
+            <a href="/" class="flex flex-col leading-none" aria-label="Citrine Technology — Home">
+                <img src="~/logos/Citrine Logo  white.png" width="150" height="150" />
+            </a>
+
+            <!-- Desktop Menu   items-center-->
+            <nav class="hidden md:flex  gap-6 text-xl">
+                <a asp-action="Index" asp-controller="Home" class="text-[#FCA311] font-semibold">Home</a>
+                <a asp-action="About" asp-controller="Home" class="hover:text-[#FCA311] font-semibold">About Us</a>
+
+                <!-- Render NavbarMenu component directly -->
+                @await Component.InvokeAsync("NavbarMenu")
+
+                <a asp-action="Create" asp-controller="Contact" class="hover:text-[#FCA311] font-semibold">Contact</a>
+            </nav>
+
+            <!-- CTA Button (Desktop only) -->
+            <a asp-action="Create" asp-controller="Contact"
+               class="hidden md:block px-6 py-2 rounded-full bg-[#FCA311] font-semibold
+                  shadow-[0_0_15px_#FCA311] border border-[#FCA311]
+                  hover:bg-[#E5E5E5] hover:text-[#14213D] transition duration-300">
+                Let’s Talk 🚀
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden flex flex-col gap-1">
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+             class="hidden md:hidden px-4 pb-4 text-center bg-gradient-to-r from-[#14213D] to-[#000000]">
+            <a asp-action="Index" asp-controller="Home" class="block text-[#FCA311] py-2 font-semibold">Home</a>
+            <a asp-action="About" asp-controller="Home" class="block py-2 text-white hover:text-[#FCA311] font-semibold">About Us</a>
+            <a asp-action="OurServices" asp-controller="Service" class="block py-2 text-white hover:text-[#FCA311] font-semibold">Service</a>
+            <a asp-action="Solutions" asp-controller="Home" class="block py-2 text-white hover:text-[#FCA311] font-semibold">Solution</a>
+@* 
+            <!-- Render NavbarMenu component directly -->
+            @await Component.InvokeAsync("NavbarMenu") *@
+
+            <a asp-action="Create" asp-controller="Contact" class="block py-2 text-white hover:text-[#FCA311] font-semibold">Contact</a>
+            <a asp-action="Create" asp-controller="Contact"
+               class="block mt-3 bg-[#FCA311] text-black px-5 py-2 rounded-full border border-[#FCA311] text-center shadow-[0_0_15px_#FCA311]">
+                Let’s Talk 🚀
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div>
+        <main id="scrollMain" role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="py-12 px-6 footer-bg bg-[#0e2e1d] text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Column 1 -->
+                <div>
+                    <a href="/" class="flex flex-col leading-none mb-3" aria-label="Citrine Technology — Home">
+                        <img src="~/logos/Citrine Logo  white.png" width="150" height="150" class="drop-shadow-lg" />
+                    </a>
+                    <p class="font-semibold text-lg leading-relaxed mb-4 footer-text-highlight">
+                        We don’t wait for the future.<br>
+                        At Citrine, we build it with<br>
+                        smart, sustainable innovation.
+                    </p>
+                    <div class="flex gap-4 text-2xl">
+                        <a href="#" class="footer-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h6 class="footer-heading text-xl">Quick Links</h6>
+                    <ul class="space-y-2 text-base">
+                        <li><a asp-action="Index" asp-controller="Home" class="footer-link">Home</a></li>
+                        <li><a asp-action="About" asp-controller="Home" class="footer-link">About Us</a></li>
+                        <li><a asp-action="OurServices" asp-controller="Service" class="footer-link">Services</a></li>
+                        <li><a asp-action="Solutions" asp-controller="Home" class="footer-link">Solutions</a></li>
+                        <li><a asp-action="Create" asp-controller="Contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h6 class="footer-heading text-xl">Our Services</h6>
+                    <ul class="space-y-2 text-base">
+                        <li><a href="#" class="footer-link">IT Network Infrastructure</a></li>
+                        <li><a href="#" class="footer-link">Optical Fiber/CCTV</a></li>
+                        <li><a href="#" class="footer-link"> Wireless Access Point</a></li>
+                        <li><a href="#" class="footer-link">Smart Class Room</a></li>
+                        <li><a href="#" class="footer-link">Digital Consulting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h6 class="footer-heading text-xl">Contact Information</h6>
+                    <p class="text-base mb-3">
+                        <i class="fas fa-map-marker-alt mr-2 footer-text-highlight"></i>
+                        <strong>Reg. Office:</strong> S-1 Chaman Plaza, Sector-B Indarpuri, Bhopal-462022
+                    </p>
+                    <p class="text-base mb-3">
+                        <i class="fas fa-map-marker-alt mr-2 footer-text-highlight"></i>
+                        <strong>Branch Office:</strong> 521 5th Floor Astralis Tower
+                        Supernova, Sector 94, Noida - 201301
+                    </p>
+                    <p class="text-base">
+                        <i class="fas fa-phone-alt mr-2 footer-text-highlight"></i>
+                        +91 7553569542, +91 9891984850
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="mt-10 pt-6 footer-bottom flex flex-col md:flex-row justify-between items-center text-sm gap-4">
+                <p class="text-center">
+                    2025 © All Rights Reserved by <span class="font-semibold">Citrine Technologies Pvt Ltd</span>
+                </p>
+                <div class="flex items-center gap-4 flex-wrap justify-center">
+                    <a href="#" class="footer-link">Terms & Conditions</a>
+                    <span>|</span>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#" class="footer-link">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="~/js/site.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.querySelector("header");
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            // Mobile menu toggle
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
+                });
+            }
+
+            // Header scroll effect
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 0) {
+                    header.classList.add("header-scrolled");
+                    // header.style.backgroundColor = "goldenrod"; // customize color
+                } else {
+                    header.classList.remove("header-scrolled");
+                    header.style.backgroundColor = "transparent";
+                }
+            });
+
+            // Fade-in sections
+            const sections = document.querySelectorAll(".fade-section");
+            if (sections.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        entry.target.classList.toggle("visible", entry.isIntersecting);
+                    });
+                }, { threshold: 0.2 });
+                sections.forEach(section => observer.observe(section));
+            }
+
+            // Dropdown toggle (mobile click vs desktop hover)
+            function toggleDropdown(id) {
+                const dropdown = document.getElementById(id);
+                const isMobile = window.innerWidth < 768; // Tailwind md breakpoint
+
+                if (isMobile) {
+                    dropdown.classList.toggle("hidden");
+                } else {
+                    document.querySelectorAll('[id$="Dropdown"]').forEach(el => {
+                        if (el.id !== id) el.classList.add("hidden");
+                    });
+                    dropdown.classList.toggle("hidden");
+                }
+
+                // Accessibility
+                const button = document.querySelector(`button[onclick="toggleDropdown('${id}')"]`);
+                if (button) {
+                    const expanded = !dropdown.classList.contains("hidden");
+                    button.setAttribute("aria-expanded", expanded);
+                }
+            }
+            window.toggleDropdown = toggleDropdown; // expose globally
+
+            // Close dropdowns when clicking outside (desktop only)
+            document.addEventListener("click", function (e) {
+                const isDropdown = e.target.closest("[id$='Dropdown']");
+                const isButton = e.target.closest("button[onclick^='toggleDropdown']");
+                const isMobile = window.innerWidth < 768;
+
+                if (!isDropdown && !isButton && !isMobile) {
+                    document.querySelectorAll('[id$="Dropdown"]').forEach(el => el.classList.add("hidden"));
+                }
+            });
+
+            // Keyboard accessibility (Esc closes dropdowns)
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") {
+                    document.querySelectorAll('[id$="Dropdown"]').forEach(el => el.classList.add("hidden"));
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

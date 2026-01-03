@@ -1,0 +1,210 @@
+@font-face {
+    font-family: "flaticon_tecz";
+    src: url("../fonts/flaticon_tecz.ttf") format("truetype"),
+    url("../fonts/flaticon_tecz.woff") format("woff"),
+    url("../fonts/flaticon_tecz.woff2") format("woff2"),
+    url("../fonts/flaticon_tecz.ttf") format("ttf"),
+    url("../fonts/flaticon_tecz.eot") format("embedded-opentype"),
+    url("../fonts/flaticon_tecz.svg") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_tecz !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-checkmark:before {
+    content: "\f101";
+}
+.flaticon-solution:before {
+    content: "\f102";
+}
+.flaticon-telephone-symbol-button:before {
+    content: "\f103";
+}
+.flaticon-email:before {
+    content: "\f104";
+}
+.flaticon-location:before {
+    content: "\f105";
+}
+.flaticon-play:before {
+    content: "\f106";
+}
+.flaticon-server:before {
+    content: "\f107";
+}
+.flaticon-technical-support:before {
+    content: "\f108";
+}
+.flaticon-solution-1:before {
+    content: "\f109";
+}
+.flaticon-speed:before {
+    content: "\f10a";
+}
+.flaticon-data-protection:before {
+    content: "\f10b";
+}
+.flaticon-optimization:before {
+    content: "\f10c";
+}
+.flaticon-globe:before {
+    content: "\f10d";
+}
+.flaticon-android:before {
+    content: "\f10e";
+}
+.flaticon-apple:before {
+    content: "\f10f";
+}
+.flaticon-internet-of-things:before {
+    content: "\f110";
+}
+.flaticon-smartwatch:before {
+    content: "\f111";
+}
+.flaticon-tv:before {
+    content: "\f112";
+}
+.flaticon-ux-design:before {
+    content: "\f113";
+}
+.flaticon-data-visualization:before {
+    content: "\f114";
+}
+.flaticon-search-engine:before {
+    content: "\f115";
+}
+.flaticon-advertisig-agency:before {
+    content: "\f116";
+}
+.flaticon-tick-inside-circle:before {
+    content: "\f117";
+}
+.flaticon-project:before {
+    content: "\f118";
+}
+.flaticon-design:before {
+    content: "\f119";
+}
+.flaticon-star:before {
+    content: "\f11a";
+}
+.flaticon-star-1:before {
+    content: "\f11b";
+}
+.flaticon-call:before {
+    content: "\f11c";
+}
+.flaticon-project-management:before {
+    content: "\f11d";
+}
+.flaticon-worldwide:before {
+    content: "\f11e";
+}
+.flaticon-quote:before {
+    content: "\f11f";
+}
+.flaticon-product-design:before {
+    content: "\f120";
+}
+.flaticon-technology:before {
+    content: "\f121";
+}
+.flaticon-bank-account:before {
+    content: "\f122";
+}
+.flaticon-healthcare:before {
+    content: "\f123";
+}
+.flaticon-open-book:before {
+    content: "\f124";
+}
+.flaticon-manufacturing:before {
+    content: "\f125";
+}
+.flaticon-share:before {
+    content: "\f126";
+}
+.flaticon-share-1:before {
+    content: "\f127";
+}
+.flaticon-scribble:before {
+    content: "\f128";
+}
+.flaticon-rocket:before {
+    content: "\f129";
+}
+.flaticon-airplane:before {
+    content: "\f12a";
+}
+.flaticon-consultant:before {
+    content: "\f12b";
+}
+.flaticon-coding:before {
+    content: "\f12c";
+}
+.flaticon-medal:before {
+    content: "\f12d";
+}
+.flaticon-quote-1:before {
+    content: "\f12e";
+}
+.flaticon-shopping-cart:before {
+    content: "\f12f";
+}
+.flaticon-user:before {
+    content: "\f130";
+}
+.flaticon-phone-call:before {
+    content: "\f131";
+}
+.flaticon-email-1:before {
+    content: "\f132";
+}
+.flaticon-edit:before {
+    content: "\f133";
+}
+.flaticon-location-1:before {
+    content: "\f134";
+}
+.flaticon-down-arrow:before {
+    content: "\f135";
+}
+.flaticon-envelope:before {
+    content: "\f136";
+}
+.flaticon-profile:before {
+    content: "\f137";
+}
+.flaticon-information:before {
+    content: "\f138";
+}
+.flaticon-settings:before {
+    content: "\f139";
+}
+.flaticon-search:before {
+    content: "\f13a";
+}
+.flaticon-gear:before {
+    content: "\f13b";
+}
+.flaticon-info:before {
+    content: "\f13c";
+}
+.flaticon-tick:before {
+    content: "\f13d";
+}
+.flaticon-love:before {
+    content: "\f13e";
+}
+.flaticon-right-arrow:before {
+    content: "\f13f";
+}

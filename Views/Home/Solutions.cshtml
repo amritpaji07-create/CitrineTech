@@ -1,0 +1,356 @@
+﻿@using CitrineTechData.ViewModel
+@model List<SolutionViewModel>
+
+@* @model CommonViewModel
+@using System.Linq *@
+
+@{
+    ViewData["Title"] = "Our Solutions";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+
+    // var project = Model.Projects.FirstOrDefault(); // Or use a specific index or filter by ID/Name
+}
+
+
+<!-- HERO SECTION -->
+<style>
+    /* === Common Palette === */
+    :root {
+        --oxford-blue-dark: #0c1425;
+        --oxford-blue: #14213d;
+        --oxford-blue-light: #29447e;
+        --orange: #fca311;
+        --orange-light: #fec871;
+        --platinum: #e5e5e5;
+        --white: #ffffff;
+        --black: #000000;
+    }
+
+    /* === General Styles === */
+    section {
+        scroll-margin-top: 100px;
+    }
+
+    .scroll-zoom {
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    #scrollBlogContent {
+        transform-origin: center;
+    }
+
+    /* === HERO SECTION STYLES === */
+    .hero1 {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient( 135deg, var(--oxford-blue-dark) 0%, var(--oxford-blue) 50%, var(--oxford-blue-light) 100% );
+        color: var(--white);
+    }
+
+        .hero1::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(252,163,17,0.25), transparent 70%), radial-gradient(circle at bottom left, rgba(20,33,61,0.4), transparent 70%);
+            opacity: 0.8;
+        }
+
+        .hero1 h2 {
+            color: var(--orange);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero1 a {
+            color: var(--orange);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+            .hero1 a:hover {
+                color: var(--orange-light);
+                text-decoration: underline;
+            }
+
+</style>
+
+<section class="hero1 relative px-2 h-100 overflow-hidden mb-8">
+    <div class="max-w-7xl mx-auto sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-sm-2" style="margin-top:50px;">
+
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2 flex flex-col items-center text-center py-12 z-10">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-2">@ViewData["Title"]</h2>
+            <p class="text-yellow-400 scroll-animate opacity-0" data-animate="slide-in-left">
+                <a asp-action="Index">Home</a>
+                <span class="text-white"> – @ViewData["Title"]</span>
+            </p>
+        </div>
+
+        <!-- Right Image -->
+        <div class="w-full md:w-1/2 flex items-center justify-center relative overflow-hidden">
+            <img id="scrollImage"
+                 src="~/img/Fun.png"
+                 alt="Engineers"
+                 class="w-full h-auto transition-transform duration-300 ease-out will-change-transform" />
+        </div>
+
+    </div>
+</section>
+
+<script>
+    window.addEventListener("scroll", function () {
+        // === HERO IMAGE SCROLL EFFECT ===
+        const image = document.getElementById("scrollImage");
+        const hero = document.querySelector(".hero1");
+        const heroRect = hero.getBoundingClientRect();
+
+        let imageProgress = 1 - heroRect.bottom / window.innerHeight;
+        imageProgress = Math.min(Math.max(imageProgress, 0), 1);
+
+        const imageScale = 1 + imageProgress * 0.8;  // 1 → 1.8
+        const imageOpacity = 1 - imageProgress * 0.6; // 1 → 0.4
+
+        image.style.transform = `scale(${imageScale})`;
+        image.style.opacity = imageOpacity;
+
+        // === BLOG CONTENT SCROLL EFFECT ===
+        const content = document.getElementById("scrollBlogContent");
+        if (content) {
+            const rect = content.getBoundingClientRect();
+            let progress = 1 - rect.bottom / window.innerHeight;
+            progress = Math.min(Math.max(progress, 0), 1);
+
+            const translateY = progress * -40;
+            const scale = 1 + progress * 0.1;
+            const opacity = 1 - progress * 0.6;
+
+            content.style.transform = `translateY(${translateY}px) scale(${scale})`;
+            content.style.opacity = opacity;
+        }
+    });
+</script>
+
+<!-- SOLUTIONS SECTION -->
+<style>
+    /* Card hover effect */
+    .solution-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        border: 2px solid transparent;
+        border-radius: 1rem; /* Rounded corners for card */
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(145deg, var(--oxford-blue), var(--oxford-blue-light));
+    }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            border-color: #fca311; /* Orange border on hover */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        /* Image styles */
+        .solution-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover img {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+</style>
+
+<section class="mx-3 py-20">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+        @foreach (var item in Model)
+        {
+            <div class="solution-card scroll-animate opacity-0 delay-150" data-animate="slide-in-up">
+
+                <!-- Image on Top -->
+                <img src="/@item.ImageUrl" alt="@item.Name" class="rounded-t-lg" />
+
+                <!-- Content -->
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-sm text-gray-300 mb-1">@item.SubTitle</p>
+                        <h3 class="text-xl font-bold mb-2 text-yellow-300">@item.Name</h3>
+                        <p class="text-sm text-white/90 mb-4 text-justify">
+                            @item.Description
+                        </p>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="mt-auto">
+                        <button class="bg-yellow-500 text-black font-semibold px-4 py-2 rounded-full text-sm hover:opacity-90 transition">
+                            <a href="@Url.Action("Details", "Solution", new { id = item.Id })">Read Detail</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+
+@* <section class="mx-3 bg-black relative rounded-2xl mt-5">
+    <div class="max-w-7xl mx-auto text-white sm:px-6 px-4 py-12 sm:py-16 md:py-24">
+
+        <!-- Background image overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="~/solarImages/ZTJ5Z79.jpg" alt="Background" class="w-full h-full object-cover opacity-30">
+        </div>
+
+        <!-- Content wrapper -->
+        <div class="relative z-10">
+
+            <!-- Top section -->
+            <div class="mb-12 lg:text-left scroll-animate opacity-0" data-animate="slide-in-left">
+                <button class="border border-lime-400 text-lime-400 rounded-full px-4 py-1 mb-4 text-sm font-medium">
+                    Our Projects
+                </button>
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 leading-tight">
+                    Energizing Communities <br class="hidden sm:block"> Through Innovation
+                </h2>
+                <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+                    <p class="text-white text-opacity-90 max-w-2xl">
+                        <strong>Solar Energy Solutions</strong> brings cutting-edge clean energy solutions to life, empowering homes,
+                        businesses, and public spaces with sustainable power that transforms everyday living.
+                    </p>
+                    <button id="toggle-projects-btn"
+                            class="bg-lime-300 text-black font-medium px-6 py-3 rounded-full hover:opacity-90 transition">
+                        More Projects ⚡
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projects row -->
+
+            <div id="projects-container" class="flex flex-col gap-12">
+                <div>
+                    @if (project != null)
+                    {
+                        <div class="bg-gradient-to-br from-black via-gray-900 to-black rounded-2xl p-6 shadow-xl flex flex-col lg:flex-row gap-8">
+
+                            <!-- Left Column: Image + Title/SubTitle -->
+                            <div class="lg:w-1/2 w-full flex flex-col items-start">
+                                <!-- Project Image -->
+                                <div class="w-full rounded-xl overflow-hidden border-4 border-lime-400 h-64 sm:h-80 lg:h-[22rem] mb-4">
+                                    <img src="@Url.Content("~/" + (string.IsNullOrEmpty(project.ImageUrl) ? "img/default.jpg" : project.ImageUrl))"
+                                         alt="@project.Name" class="w-full h-full object-cover">
+                                </div>
+
+                                <!-- Title & Subtitle -->
+                                <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">
+                                    @project.Name
+                                </h1>
+                                <p class="text-white text-opacity-80 text-base sm:text-lg italic mb-4">
+                                    @project.SubTitle
+                                </p>
+                            </div>
+
+                            <!-- Right Column: Description & Highlights -->
+                            <div class="lg:w-1/2 w-full flex flex-col justify-between">
+                                <div>
+                                    <!-- Description -->
+                                    <div class="text-white text-opacity-90 leading-relaxed mb-6 text-justify">
+                                        @project.Description
+                                    </div>
+
+                                    <!-- Highlights -->
+                                    @if (project.ExistingImages != null && project.ExistingImages.Any())
+                                    {
+                                        <div class="mb-6">
+                                            <h2 class="text-xl font-semibold text-white mb-2">Highlights</h2>
+                                            <ul class="list-disc list-inside text-white text-opacity-80 space-y-1">
+                                                @foreach (var item in project.ExistingImages)
+                                                {
+                                                    <li>@item</li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-white text-lg">Project not found.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section> *@
+
+
+<!-- Form Section -->
+@* <section class="mx-3 bg-[#0e2e1d] rounded-3xl overflow-hidden py-16 px-4 rounded-2xl mt-5">
+    <div class="max-w-7xl mx-auto max-w-7xl">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <!-- Left Content -->
+            <div class="w-full md:w-1/2 text-white  scroll-animate opacity-0" data-animate="slide-in-left">
+                <span class="inline-block bg-lime-300 text-black font-semibold text-sm px-4 py-1 rounded-full mb-4 ">
+                    Powered by Trust and Results
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-bold leading-tight mb-4  ">
+                    Ready to switch to IT?<br />Let’s start the journey.
+                </h2>
+                <p class="text-white/90 text-base mb-6 max-w-lg leading-relaxed  ">
+                    With <strong>IT Technology</strong>, IT solutions aren’t complicated — they’re reliable, intelligent, and built to perform.
+                    Together, let’s power the future with clean, smart, and sustainable innovation.
+                </p>
+                <button class="bg-white text-black font-semibold px-6 py-3 rounded-full hover:scale-105 transition-transform ">
+                    Start The Journey
+                </button>
+            </div>
+
+            <!-- Right Form -->
+            <div class="w-full md:w-1/2  scroll-animate opacity-0" data-animate="slide-in-up">
+                <div class="bg-white rounded-t-2xl p-6 shadow-lg mb-[-69px] md:mb-[-183px] lg:mb-[-80px] xl:mb-[-75px]">
+
+                    <h3 class="text-2xl font-bold mb-6 text-black">Get Your Free Consultation</h3>
+                    <form class="space-y-4 ">
+                        <!-- Name -->
+                        <div>
+                            <label class="block text-sm font-semibold text-black mb-1">
+                                Your Name <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" placeholder="e.g. Sameer Patel"
+                                   class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-lime-400" />
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-sm font-semibold text-black mb-1">
+                                Email <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" placeholder="e.g. sameer123@gmail.com"
+                                   class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-lime-400" />
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label class="block text-sm font-semibold text-black mb-1">
+                                Message <span class="text-red-500">*</span>
+                            </label>
+                            <textarea rows="2" placeholder="Tell us what you need here..."
+                                      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-lime-400"></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit"
+                                class="w-full bg-lime-300 text-black font-bold px-6 py-3 rounded-full hover:opacity-90 transition">
+                            Free Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+ *@

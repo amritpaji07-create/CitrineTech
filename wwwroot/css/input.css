@@ -1,0 +1,531 @@
+﻿
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.card-img-top {
+    transition: transform 1s ease, box-shadow 0.6s ease;
+    transform-origin: center;
+}
+
+.card:hover .card-img-top {
+    transform: perspective(800px) rotateY(8deg) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-section a:hover {
+    color: #9bff00 !important;
+    transition: 0.3s;
+}
+
+.footer-section input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-section input,
+.footer-section button {
+    height: 45px;
+}
+
+
+@media (hover: hover) {
+    .card:hover .card-img-top {
+        transform: perspective(800px) rotateY(8deg) scale(1.03);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* left right animation */
+
+
+@keyframes slide-in-up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-in-up {
+    animation: slide-in-up 0.7s ease-out forwards;
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left 0.7s ease-out forwards;
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 0.7s ease-out forwards;
+}
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-down {
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 1s ease-out;
+}
+
+.slide-in-up {
+    animation: slideInUp 5s ease-out;
+}
+.slide-in-down {
+    animation: slideInDown 5s ease-out;
+    margin-top:10px;
+}
+
+.blog-card:hover .blog-image {
+    transform: rotate(3deg) scale(1.05);
+}
+
+
+/*Hero img animation*/
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(2deg);
+    }
+
+    75% {
+        transform: rotate(-8deg);
+    }
+}
+
+.animate-wave {
+    transform-origin: bottom center; /* pivot from wrist */
+    animation: wave 2s ease-in-out infinite;
+}
+
+/* Mobile: smaller wave */
+@media (max-width: 640px) {
+    @keyframes wave {
+        0%, 100% {
+            transform: rotate(0deg);
+        }
+
+        25% {
+            transform: rotate(2deg);
+        }
+
+        75% {
+            transform: rotate(-5deg);
+        }
+    }
+}
+
+/* Large screens: slower + smoother wave */
+@media (min-width: 1024px) {
+    .animate-wave {
+        animation: wave 3s ease-in-out infinite;
+    }
+}
+
+
+
+.clip-ellipse {
+    clip-path: ellipse(55% 82% at 50% 50%);
+}
+
+/*Hero*/
+.HERO {
+    margin: 0px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto';
+    font-size: 40px;
+    font-weight: 100;
+    overflow: hidden;
+}
+
+/* Dropping Text Effect */
+.dropping-texts {
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+    height: 40px;
+    vertical-align: -2px;
+    position: relative;
+}
+
+   /* .dropping-texts > div {
+        font-size: 36px;
+        opacity: 0;
+        margin-left: -30px;
+        position: absolute;
+        font-weight: 300;
+        animation-fill-mode: forwards;
+    }
+
+        .dropping-texts > div:nth-child(1) {
+            animation: roll 5s linear infinite 0s;
+        }
+
+        .dropping-texts > div:nth-child(2) {
+            animation: roll 5s linear infinite 1s;
+        }
+
+        .dropping-texts > div:nth-child(3) {
+            animation: roll 5s linear infinite 2s;
+        }
+
+        .dropping-texts > div:nth-child(4) {
+            animation: roll2 5s linear infinite 3s;
+        }*/
+
+/* Animations */
+@keyframes roll {
+    0% {
+        font-size: 0px;
+        opacity: 0;
+        margin-left: -30px;
+        margin-top: 0px;
+        transform: rotate(-25deg);
+    }
+
+    5% {
+        font-size: 36px;
+        opacity: 1;
+        margin-left: 0px;
+        margin-top: 0px;
+        transform: rotate(0deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    27% {
+        font-size: 0px;
+        opacity: 0;
+        margin-left: 20px;
+        margin-top: 100px;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes roll2 {
+    0% {
+        font-size: 0px;
+        opacity: 0;
+        margin-left: -30px;
+        margin-top: 0px;
+        transform: rotate(-25deg);
+    }
+
+    5% {
+        font-size: 36px;
+        opacity: 1;
+        margin-left: 0px;
+        margin-top: 0px;
+        transform: rotate(0deg);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    37% {
+        font-size: 100px;
+        opacity: 0;
+        margin-left: -100px;
+        margin-top: -80px;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.tp-step-wrapper {
+    position: relative;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .tp-step-wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 767px) {
+    .tp-step-wrapper {
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+}
+.tp-step-line-shape {
+    position: absolute;
+    left: 0;
+    top: 65px;
+    z-index: -1;
+}
+
+.tp-step-item {
+    position: relative;
+}
+
+    .tp-step-item:hover .tp-step-item-thumb::before {
+        opacity: 1;
+    }
+
+    .tp-step-item:hover .tp-step-item-thumb-icon i {
+        opacity: 1;
+        visibility: visible;
+    }
+
+.tp-step-item-count {
+    position: absolute;
+    top: -2px;
+    left: 25px;
+    z-index: 1;
+}
+
+    .tp-step-item-count span {
+        display: inline-block;
+        height: 34px;
+        width: 34px;
+        line-height: 29px;
+        background-color: #c93438;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--tp-common-white);
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 0px rgba(16, 23, 40, 0.2);
+        border: 2px solid var(--tp-common-white);
+    }
+
+.tp-step-item-overlay {
+    position: relative;
+    display: inline-block;
+}
+
+.tp-step-item-thumb {
+    display: inline-block;
+    border: 1px solid #e2e2e2;
+    /*border-radius: 50%;*/
+    position: relative;
+    box-shadow: -8px 9px 6px #121212bf;
+    margin-left: 10px;
+    margin-bottom: 14px;
+}
+
+    .tp-step-item-thumb::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        /*background-color: rgba(16, 23, 40, 0.851);
+        border-radius: 50%;
+        border: 20px solid var(--tp-common-white);*/
+        opacity: 0;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+    }
+
+    .tp-step-item-thumb img {
+        border-radius: 50%;
+        border: 20px solid var(--tp-common-white);
+    }
+
+.tp-step-item-thumb-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+    .tp-step-item-thumb-icon i {
+        font-size: 36px;
+        color: var(--tp-common-white);
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+    }
+
+.tp-step-item-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+
+.tp-project-4-item {
+    position: relative;
+}
+
+    .tp-project-4-item:hover .sfatp-project-4-item-thumb::before {
+        opacity: 0;
+    }
+
+    .tp-project-4-item:hover .sfatp-project-4-item-thumb::after {
+        height: 100%;
+    }
+
+    .tp-project-4-item:hover .sfatp-project-4-item-thumb img {
+        mix-blend-mode: luminosity;
+    }
+
+    .tp-project-4-item:hover .tp-project-4-arrow a {
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+    }
+
+.sfatp-project-4-item-thumb {
+    position: relative;
+    background-color: #1A1617;
+    z-index: 1;
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s;
+}
+
+    .sfatp-project-4-item-thumb img {
+        width: 100%;
+        transition: transform 500ms ease, mix-blend-mode 500ms ease;
+        mix-blend-mode: normal;
+    }
+
+    .sfatp-project-4-item-thumb::before {
+        box-shadow: 10px 5px 5px #a16464;
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        z-index: 2;
+    }
+
+    .sfatp-project-4-item-thumb::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 0;
+        z-index: 2;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        text-align: center;
+        background-image: var(--tp-gradient-5);
+    }

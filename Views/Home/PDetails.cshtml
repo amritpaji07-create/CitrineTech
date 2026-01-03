@@ -1,0 +1,164 @@
+﻿@using CitrineTechData.ViewModel
+@model ProjectViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<style>
+    .scroll-zoom {
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    #scrollBlogContent {
+        transform-origin: center;
+    }
+
+</style>
+
+<section class="hero1 bg-gradient-to-r from-[#051b11] via-[#123d2d] to-[#a47e1f] relative px-2 h-100 overflow-hidden">
+    <div class="max-w-7xl mx-auto text-white sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-sm-2">
+
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2 flex flex-col items-center text-center text-white py-12 z-10">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-2">@Model.Name</h2>
+            <p class="text-yellow-400 scroll-animate opacity-0" data-animate="slide-in-left">
+                @* <a asp-action="Index">Home</a> *@
+                @* <span class="text-white"> – @ViewData["Title"]</span> *@
+            </p>
+        </div>
+
+        <!-- Right Image -->
+        <div class="w-full md:w-1/2 flex items-center justify-center relative overflow-hidden">
+            <img id="scrollImage"
+                 src="~/img/Fun.png"
+                 alt="Engineers"
+                 class="w-full h-auto transition-transform duration-300 ease-out will-change-transform">
+        </div>
+    </div>
+</section>
+
+<script>
+    window.addEventListener("scroll", function () {
+        // === Image Animation ===
+        const image = document.getElementById("scrollImage");
+        const heroSection = document.querySelector(".hero1");
+        const heroRect = heroSection.getBoundingClientRect();
+
+        let imageProgress = 1 - (heroRect.bottom / window.innerHeight);
+        imageProgress = Math.min(Math.max(imageProgress, 0), 1);
+
+        const imageScale = 1 + imageProgress * 0.8;   // 1 → 1.8
+        const imageOpacity = 1 - imageProgress * 0.6; // 1 → 0.4
+
+        image.style.transform = `scale(${imageScale})`;
+        image.style.opacity = imageOpacity;
+
+
+        // === Blog Content Animation ===
+        const content = document.getElementById("scrollBlogContent");
+        const blogSection = document.querySelector("#scrollBlogContent"); // ⚠️ make sure your blog section has class="blog"
+        if (content && blogSection) {
+            const blogRect = blogSection.getBoundingClientRect();
+
+            let contentProgress = 1 - (blogRect.bottom / window.innerHeight);
+            contentProgress = Math.min(Math.max(contentProgress, 0), 1);
+
+            const translateY = contentProgress * -40; // move upward
+            const contentScale = 1 + contentProgress * 0.1; // 1 → 1.1
+            const contentOpacity = 1 - contentProgress * 0.6; // 1 → 0.4
+
+            content.style.transform = `translateY(${translateY}px) scale(${contentScale})`;
+            content.style.opacity = contentOpacity;
+        }
+    });
+</script>
+
+
+
+<section class="relative mx-3 overflow-hidden py-16 px-4 rounded-2xl mt-5">
+       <!-- Content -->
+    <div class="relative z-20 w-full max-w-4xl mx-auto">
+        <div class="max-w-5xl mx-auto py-12 px-4 text-black">
+            <div class="rounded-xl overflow-hidden mb-6 h-82">
+                <img src="@Url.Content("~/" + (string.IsNullOrEmpty(Model.ImageUrl) ? "img/default.jpg" : Model.ImageUrl))"
+                     alt="@Model.Name" class="w-full h-full object-cover">
+            </div>
+
+            <h1 class="text-3xl font-bold mb-2">@Model.Name</h1>
+            <p class="text-lg text-yellow-600 mb-4">@Model.SubTitle</p>
+            <p class="text-base mb-6 text-justify">@Model.Description</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="mx-3 bg-[#00809D] rounded-3xl overflow-hidden py-16 px-4 rounded-2xl mt-5">
+    <div class="max-w-7xl mx-auto max-w-7xl">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <!-- Left Content -->
+            <div class="w-full md:w-1/2 text-white  scroll-animate opacity-0" data-animate="slide-in-left">
+                <span class="inline-block bg-yellow-300 text-black font-semibold text-sm px-4 py-1 rounded-full mb-4 ">
+                    Powered by Trust and Results
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-bold leading-tight mb-4  ">
+                    Ready to switch to IT?<br />Let’s start the journey.
+                </h2>
+                <p class="text-white/90 text-base mb-6 max-w-lg leading-relaxed  ">
+                    With <strong>IT Technology</strong>, IT solutions aren’t complicated — they’re reliable, intelligent, and built to perform.
+                    Together, let’s power the future with clean, smart, and sustainable innovation.
+                </p>
+                <button class="bg-white text-black font-semibold px-6 py-3 rounded-full hover:scale-105 transition-transform ">
+                    Start The Journey
+                </button>
+            </div>
+
+            <!-- Right Form -->
+            <div class="w-full md:w-1/2  scroll-animate opacity-0" data-animate="slide-in-up">
+                <div class="bg-white rounded-t-2xl p-6 shadow-lg mb-[-69px] md:mb-[-183px] lg:mb-[-80px] xl:mb-[-75px]">
+
+                    <h3 class="text-2xl font-bold mb-6 text-black">Get Your Free Consultation</h3>
+                    <form class="space-y-4 ">
+                        <!-- Name -->
+                        <div>
+                            <label class="block text-sm font-semibold text-black mb-1">
+                                Your Name <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" placeholder="e.g. Sameer Patel"
+                                   class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-sm font-semibold text-black mb-1">
+                                Email <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" placeholder="e.g. sameer123@gmail.com"
+                                   class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label class="block text-sm font-semibold text-black mb-1">
+                                Message <span class="text-red-500">*</span>
+                            </label>
+                            <textarea rows="2" placeholder="Tell us what you need here..."
+                                      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit"
+                                class="w-full bg-yellow-300 text-black font-bold px-6 py-3 rounded-full hover:opacity-90 transition">
+                            Free Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

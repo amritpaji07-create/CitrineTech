@@ -1,0 +1,977 @@
+﻿@using CitrineTechData.ViewModel
+@model CommonViewModel
+@using System.Linq
+
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+@* blue-#070a7b *@
+<style>
+    .pulse-square {
+        position: relative;
+        width: 70px;
+        height: 70px;
+    }
+
+        .pulse-square::before,
+        .pulse-square::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(250, 204, 21, 0.3);
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.7;
+            animation: pulseSquare 2s infinite;
+        }
+
+        .pulse-square::after {
+            animation-delay: 1s;
+        }
+
+    @@keyframes pulseSquare {
+        0% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.7;
+        }
+
+        100% {
+            transform: translate(-50%, -50%) scale(2);
+            opacity: 0;
+        }
+    }
+
+    .EmpIT {
+        margin-right: -10px;
+    }
+
+    @@media (max-width: 767px) {
+        .EmpIT {
+            margin: 1px;
+        }
+    }
+
+    @@keyframes typing {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+
+    @@keyframes blink {
+        from, to {
+            border-color: transparent;
+        }
+
+        50% {
+            border-color: #facc15; /* Tailwind yellow-400 */
+        }
+    }
+
+    /* Typewriter blinking cursor */
+    .typewriter {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 3px solid #facc15;
+        width: 0;
+        animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    #heroText::after {
+        content: '|';
+        margin-left: 6px;
+        color: #facc15; /* Tailwind yellow-400 */
+        animation: blink 0.8s infinite;
+    }
+
+    /* Text glow animation */
+    .typewriter-glow {
+        text-shadow: 0 0 8px rgba(250, 204, 21, 0.6), 0 0 16px rgba(250, 204, 21, 0.4);
+        transition: text-shadow 0.3s ease-in-out;
+    }
+
+    /* Cursor blink */
+    @@keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+
+    /* about-tag {
+                                        border: 1px solid var(--orange);
+                                        color: var(--oxford-blue);
+                                        background: rgba(252, 163, 17, 0.1);
+                                    }
+
+                                    .about-title span {
+                                        color: var(--orange);
+                                        text-shadow: 0 1px 6px rgba(252, 163, 17, 0.2);
+                                    } */
+
+</style>
+
+
+<div class="relative w-full px-4 py-20 overflow-hidden">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        <source src="/img/3130284-uhd_3840_2160_30fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay (for readability) -->
+    <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+    <!-- HERO Content -->
+    <div class="relative z-20 flex items-center justify-center text-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+        <h1 id="heroText"
+            class="text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold max-w-3xl mx-auto px-4 leading-snug tracking-wide drop-shadow-lg">
+        </h1>
+    </div>
+</div>
+
+
+<section class="bg-black" style="">
+    <!-- Down cards -->
+    <div class="max-w-9xl text-white sm:px-6 py-5 ">
+        <!-- Down cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Card 1: Empowering IT Innovation -->
+            <div style=" " class="EmpIT max-w-2xl mx-auto bg-white/90 backdrop-blur border-2 border-white rounded-2xl p-8 flex flex-row mb-5 scroll-animate opacity-0" data-animate="slide-in-left">
+                <!-- Left: Text Content -->
+                <div class="basis-[70%] pr-6">
+                    <p class="text-3xl font-bold mb-2 text-black">Empowering IT Innovation</p>
+                    <p class="text-gray-700 mb-2">
+                        Citrine Technologies delivers cutting-edge IT services that drive digital transformation. From cloud computing to cybersecurity, we help businesses scale securely and efficiently.
+                    </p>
+                </div>
+
+                <!-- Right: Video -->
+                <div class="basis-[30%] relative rounded-lg overflow-hidden shadow-lg h-48">
+                    <iframe class="w-full h-full rounded-lg"
+                            src="https://www.youtube.com/embed/51H27g3Q-Ao"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+
+                    <!-- Pulsing Glow Square -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="pulse-square"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-7xl flex flex-wrap gap-5 bg-white p-5 scroll-animate opacity-0 delay-150 rounded-t-2xl" data-animate="slide-in-right" style="margin-bottom:-20px;">
+                <!-- Card 2: Stats + Certificate -->
+                <div class="bg-white rounded-2xl p-3 border border-black flex-1 ">
+                    <p class="text-gray-700 mb-6 text-justify">
+                        At Citrine Technologies, we empower enterprises.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 text-black">
+                        <div class="border-0">
+                            <p class="text-3xl font-bold">+500</p>
+                            <p class="font-medium">Enterprise Projects Delivered</p>
+                        </div>
+                        <div class="items-center gap-2 border-l-1 border-yellow-600 pl-3">
+                            <div class="flex gap-1">
+                                <div class="border-2 border-yellow-400 p-1 rounded-lg w-14 h-14 content-center"> <img src="~/img/25.png" /></div>
+                                <div class="border-2 border-yellow-400 p-1 rounded-lg w-14 h-14 content-center"> <img src="~/img/26.png" /></div>
+                            </div>
+                            <p class="font-bold">ISO 9001:2015<Br /> ISO 45001:2018<br />ISO/IEC 27001:2022</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3: Call-to-Action -->
+                @* <div class="rounded-2xl p-6 flex-1" style="background-image: url('/img/3.jpg'); background-size: cover; background-position: center;"> *@
+                <div class="rounded-2xl p-6 flex-1 bg-gradient-to-br from-yellow-200 via-yellow-200 to-white text-black">
+
+                    <h3 class="text-3xl font-bold mb-4 text-black">Unlock Smart IT <br />Solutions</h3>
+                    <button class="bg-white text-black font-semibold px-6 py-2 rounded-full hover:scale-105 transition-transform glow hover:bg-black hover:text-yellow-400">
+                        <a asp-action="OurServices" asp-controller="Service">
+                            Explore Services 💻
+                        </a>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- About Section   bg-gradient-to-br from-white via-gray-50 to-yellow-50 rounded-2xl shadow-lg-->
+<section class="mx-3 relative rounded-2xl sm:px-6 py-16 md:py-24 rounded-2xl">
+    <div class="max-w-7xl mx-auto sm:px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-12">
+        <!-- Left -->
+        <div class="w-full md:w-1/2 space-y-6" data-animate="slide-in-left">
+
+            <button class="border border-yellow-600 text-yellow-600 rounded-full px-5 py-2 mb-6 hover:bg-white hover:text-[#0b1b13] transition duration-300">
+                Who We Are
+            </button>
+
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                Creating Impact Through <span class="text-yellow-600">Smart IT Innovation</span>
+            </h2>
+
+            <p class="text-gray-700 leading-relaxed sm:text-lg text-justify">
+                <strong>Citrine IT Solutions</strong> is a technology-driven company dedicated to building a smarter,
+                connected, and sustainable digital future. We empower businesses and communities worldwide through
+                innovative IT services and intelligent transformation strategies.
+            </p>
+
+
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="bg-black text-yellow-400 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold mb-2">Our Vision</h3>
+                    <p class="text-sm">Empowering global progress with technology that simplifies complexity and accelerates growth.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-200 via-yellow-200 to-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold mb-2">Our Mission</h3>
+                    <p class="text-sm">Delivering innovative IT solutions that transform businesses and inspire sustainable growth.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right -->
+        <div class="w-full md:w-1/2" data-animate="slide-in-right">
+            <button class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full shadow-md hover:scale-105 transition">
+                <a asp-action="About" asp-controller="Home">
+                    Get to Know Us 💻
+                </a>
+            </button>
+            <img src="~/img/It-1.jpg" alt="IT Team Working"
+                 class="w-full rounded-2xl mt-6 shadow-2xl ">
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Scroller   w-[85%] -->
+<section class="bg-white py-12 px-4 flex justify-end">
+    <div class="relative overflow-hidden">
+        <!-- Title -->
+        <h2 class="max-w-7xl mx-auto sm:px-6 py-20 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+            Our Solutions – <span class="text-yellow-600">Our Strength</span>
+        </h2>
+
+        <!-- Navigation Arrows -->
+        <button class="absolute left-0 top-1/2 -translate-y-1/2 bg-yellow/40 text-black p-3 rounded-full opacity-0 hover:opacity-100 transition"
+                onclick="prevSlide()">
+            &#8592;
+        </button>
+
+        <button class="absolute right-0 top-1/2 -translate-y-1/2 bg-yellow/40 text-black p-3 rounded-full opacity-0 hover:opacity-100 transition"
+                onclick="nextSlide()">
+            &#8594;
+        </button>
+
+        <!-- Slider Wrapper -->
+        <style>
+            @@keyframes slide {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            /* Continuous sliding */
+            .animate-slide {
+                display: flex;
+                gap: 1.5rem; /* matches Tailwind gap-6 */
+                animation: slide 20s linear infinite;
+                width: max-content;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            /* Pause on hover */
+            .carousel-wrapper:hover .animate-slide {
+                animation-play-state: paused;
+            }
+        </style>
+
+        <div class="carousel-wrapper overflow-hidden w-full">
+            <div id="carousel" class="animate-slide">
+                <!-- Original items -->
+                @foreach (var item in Model.SubSolution)
+                {
+                    <div class="relative w-[250px] h-[300px] md:w-[280px] md:h-[320px] lg:w-[300px] lg:h-[340px] rounded-2xl shadow-lg overflow-hidden group mx-auto">
+                        <a asp-action="Details" asp-controller="SubSolution" asp-route-id="@item.Id" class="block w-full h-full">
+                            <img src="@item.ImageUrl"
+                                 alt="@item.Name"
+                                 class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-yellow-400/70 via-yellow-200/50 to-white/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-center px-2">
+                                <span class="text-white font-semibold text-lg sm:text-xl md:text-2xl drop-shadow-md group-hover:underline">
+                                    @item.Name
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                }
+
+                <!-- Duplicate items for seamless loop -->
+                @* @foreach (var item in Model.SubSolution)
+                {
+                <div class="relative w-[250px] h-[300px] md:w-[280px] md:h-[320px] lg:w-[300px] lg:h-[340px] rounded-2xl shadow-lg overflow-hidden group mx-auto">
+                <a asp-action="Details" asp-controller="SubSolution" asp-route-id="@item.Id" class="block w-full h-full">
+                <img src="@item.ImageUrl"
+                alt="@item.Name"
+                class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-yellow-400/70 via-yellow-200/50 to-white/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-center px-2">
+                <span class="text-white font-semibold text-lg sm:text-xl md:text-2xl drop-shadow-md group-hover:underline">
+                @item.Name
+                </span>
+                </div>
+                </a>
+                </div>
+                } *@
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Powering Solutions     bg-gradient-to-r from-[#0b1b13] via-[#123d2d] to-[#bfa127]    bg-blue-900-->
+<section class="powerSolution bg-[#374562] mx-3 text-white sm:px-6 py-16 md:py-24 rounded-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Top Section -->
+        <div class="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 mb-20">
+
+            <!-- Text Content -->
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <button class="border border-white text-white rounded-full px-5 py-2 mb-6 hover:bg-white hover:text-[#0b1b13] transition duration-300">
+                    Powering Solutions
+                </button>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Revolutionizing IT for <br class="hidden sm:block"> Tomorrow’s Businesses
+                </h2>
+                <p class="text-gray-100 text-justify sm:text-center lg:text-justify leading-relaxed text-base sm:text-lg">
+                    At <strong>Citrine IT Solutions</strong>, we design and implement smart digital systems that help
+                    people, organizations, and industries thrive — efficiently, sustainably, and intelligently in the
+                    connected world.
+                </p>
+            </div>
+
+            <!-- Metrics -->
+            <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center sm:items-start gap-8 lg:gap-16">
+                <div class="text-center sm:text-left">
+                    <h3 class="text-4xl sm:text-5xl font-bold text-yellow-400 counter" data-target="500">0</h3>
+                    <p class="font-medium text-sm sm:text-base">Projects Delivered</p>
+                </div>
+                <div class="sm:border-l border-gray-400 sm:pl-8 text-center sm:text-left">
+                    <h3 class="text-4xl sm:text-5xl font-bold text-yellow-400 counter" data-target="120">0</h3>
+                    <p class="font-medium text-sm sm:text-base">Global Clients Served</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+
+            <!-- Card 1 -->
+            <a asp-controller="Home" asp-action="Solutions">
+                <div class="bg-white/10 backdrop-blur-lg border border-white/20 p-6 rounded-2xl hover:bg-yellow-400 hover:text-black transition-all duration-500 text-center">
+                    <div class="flex justify-center mb-5">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3103/3103451.png" alt="RFID" class="w-14 sm:w-16 h-14 sm:h-16 object-contain">
+                    </div>
+                    <h4 class="font-bold text-lg sm:text-xl mb-2">RFID Solutions</h4>
+                    <p class="text-sm sm:text-base text-justify">
+                        Citrine Technologies offers a wide range of end-to-end RFID solutions that power efficiency and innovation across industries.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a asp-controller="Home" asp-action="Solutions">
+                <div class="bg-yellow-400 text-black p-6 rounded-2xl transition-all duration-500 text-center">
+                    <div class="flex justify-center mb-5">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="IoT" class="w-14 sm:w-16 h-14 sm:h-16 object-contain">
+                    </div>
+                    <h4 class="font-bold text-lg sm:text-xl mb-2">IoT Solutions</h4>
+                    <p class="text-sm sm:text-base text-justify">
+                        Citrine Technologies offers a wide range of Scalable, secure IoT solutions designed to support enterprise growth and digital transformation.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a asp-controller="Home" asp-action="Solutions">
+                <div class="bg-white/10 backdrop-blur-lg border border-white/20 p-6 rounded-2xl hover:bg-yellow-400 hover:text-black transition-all duration-500 text-center">
+                    <div class="flex justify-center mb-5">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2942/2942861.png" alt="Networking" class="w-14 sm:w-16 h-14 sm:h-16 object-contain">
+                    </div>
+                    <h4 class="font-bold text-lg sm:text-xl mb-2">Networking Solutions</h4>
+                    <p class="text-sm sm:text-base text-justify">
+                        Citrine Technologies offers a wide range of robust and high-performance networking solutions tailored to your business.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card 4     hover:bg-[#0e2e1d] hover:text-white-->
+            <a asp-controller="Home" asp-action="Solutions">
+                <div class="bg-yellow-400 text-black p-6 rounded-2xl  transition-all duration-500 text-center">
+                    <div class="flex justify-center mb-5">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="AI" class="w-14 sm:w-16 h-14 sm:h-16 object-contain">
+                    </div>
+                    <h4 class="font-bold text-lg sm:text-xl mb-2">Artificial Intelligence</h4>
+                    <p class="text-sm sm:text-base text-justify">
+                        Citrine Technologies offers a wide range of solutions for building smarter businesses through advanced AI-driven insights and automation. 
+                       @*  Our technologies help organizations optimize operations, improve decision-making, and enhance customer experiences.  *@
+                        
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Project Section -->
+<section class="mx-3 relative rounded-2xl sm:px-6 py-16 md:py-24 rounded-2xl">
+    <div class="max-w-7xl mx-auto text-black px-4 sm:px-6 lg:px-8">
+
+        <!-- Background image overlay -->
+        @* <div class="absolute inset-0 z-0">
+        <img src="~/solarImages/ZTJ5Z79.jpg" alt="Background" class="w-full h-full object-cover opacity-30">
+        </div> *@
+
+        <!-- Content wrapper -->
+        <div class="relative z-10">
+            <!-- Top section -->
+            <div class="mb-12 lg:text-left scroll-animate opacity-0" data-animate="slide-in-left">
+                <button class="border border-yellow-600 text-yellow-600 rounded-full px-5 py-2 mb-6 hover:bg-yellow-400 hover:text-[#0b1b13] transition duration-300">
+                    Our Projects
+                </button>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Energizing Communities Through <br class="lg:block md:none">Innovation
+                </h2>
+
+                <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+                    <!-- Text block (70%) -->
+                    <div class="lg:basis-[70%]">
+                        <p class="text-gray-900 leading-relaxed text-base sm:text-lg text-left sm:text-center lg:text-left">
+                            <strong>Citrine Technologies</strong> delivers cutting-edge IT services that drive digital transformation. From cloud computing to cybersecurity, we help businesses scale securely and efficiently.
+                        </p>
+                    </div>
+
+                    <!-- Button block (30%) -->
+                    <div class="lg:basis-[30%] flex justify-center lg:justify-end">
+                        <a asp-controller="Home" asp-action="Project"
+                           class="bg-yellow-400 text-black font-medium px-6 py-3 rounded-full hover:opacity-90 transition">
+                            More Projects ⚡
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects row -->
+
+            <div id="projects-container" class="flex flex-col gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    @for (int i = 0; i < Model.Projects.Count; i++)
+                    {
+                        var isHidden = i >= 2 ? "hidden extra-project" : "";
+                        <div class="w-full @isHidden">
+                            <div class="rounded-xl overflow-hidden border-4 border-yellow-400 mb-4 h-56 sm:h-64 lg:h-72">
+                                <img src="@Model.Projects[i].ImageUrl" alt="@Model.Projects[i].Name" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold text-black mb-1">
+                                @Model.Projects[i].Name
+                                @* <span class="block sm:inline text-sm font-normal text-yellow-400">| Lisbon, Portugal</span> *@
+                            </h3>
+                            <p class="text-xs sm:text-sm text-black text-opacity-80 mb-4">
+                                @Model.Projects[i].SubTitle
+                            </p>
+                            <a href="@Url.Action("PDetails", "Home", new { id = @Model.Projects[i].Id })"
+                               class="inline-block bg-yellow-400 text-black px-5 py-2 rounded-full font-medium hover:opacity-90 transition">
+                                More Detail ⚡
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Services section -->
+<section class="mx-3 bg-[#f5f5f9] rounded-2xl sm:px-6 py-16 md:py-24 rounded-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="relative z-10">
+            <!-- Top section -->
+            <div class="mb-12 lg:text-left scroll-animate opacity-0" data-animate="slide-in-left">
+                <button class="border border-yellow-600 text-yellow-600 rounded-full px-5 py-2 mb-6 hover:bg-yellow-400 hover:text-[#0b1b13] transition duration-300">
+                    Our Services
+                </button>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Powering Success Through <br class="lg:block md:none">Renewable Services
+                </h2>
+
+                <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+                    <!-- Text block (70%) -->
+                    <div class="lg:basis-[70%]">
+                        <p class="text-gray-900 leading-relaxed text-base sm:text-lg text-left sm:text-center lg:text-left">
+                            <strong>Citrine Technologies</strong> specializes in implementing comprehensive IT systems and software solutions across diverse sectors.
+                        </p>
+                    </div>
+
+                    <!-- Button block (30%) -->
+                    <div class="lg:basis-[30%] flex justify-center lg:justify-end">
+                        <a asp-controller="Service" asp-action="OurServices"
+                           class="bg-yellow-400 text-black font-medium px-6 py-3 rounded-full hover:opacity-90 transition">
+                            More Services ⚡
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Grid Layout (Only 4 Cards) -->
+
+        <div class="grid md:grid-cols-2 gap-8">
+            @foreach (var item in Model.Services.Take(4))
+            {
+                <div class="bg-[#374562] rounded-2xl overflow-hidden text-white flex flex-col md:flex-row shadow-md scroll-animate opacity-0 delay-150" data-animate="slide-in-right">
+
+                    <!-- Text Content -->
+                    <div class="p-6 flex-1">
+                        <p class="text-sm text-gray-300 mb-1">@item.SubTitle</p>
+                        <h3 class="text-xl font-bold mb-2 text-yellow-300">@item.Name</h3>
+                        <p class="text-sm text-white/90 mb-4 text-justify">
+                            @item.Description
+                        </p>
+                        <button class="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-full text-sm hover:opacity-90 transition">
+                            <a href="@Url.Action("Details", "Service", new { id = item.Id })">Read Detail</a>
+                        </button>
+                    </div>
+
+                    <!-- Image -->
+                    <img src="@item.ImageUrl" alt="@item.Name" class="h-48 md:h-auto md:w-48 object-cover">
+                </div>
+            }
+        </div>
+
+
+
+
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="mx-3 rounded-2xl sm:px-6 py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Two-column layout -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12">
+
+            <!-- Left Image (50%) -->
+            <div class="w-full lg:w-1/2 scroll-animate opacity-0" data-animate="slide-in-left">
+                <img src="~/img/download.jpg" alt="Testimonial Image" class="w-full rounded-3xl object-cover" />
+            </div>
+
+            <!-- Right Content (50%) -->
+            <div class="w-full lg:w-1/2 space-y-6 scroll-animate opacity-0 delay-150 z-10" data-animate="slide-in-right">
+                <!-- Tag + Heading -->
+                <div class="mb-12 lg:text-left">
+                    <button class="border border-yellow-600 text-yellow-600 rounded-full px-5 py-2 mb-6 hover:bg-yellow-400 hover:text-[#0b1b13] transition duration-300">
+                        What Our Clients Say Matters
+                    </button>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4">
+                        Powered by Trust and Results
+                    </h2>
+                    <p class="text-gray-900 leading-relaxed text-base sm:text-lg text-center lg:text-left">
+                        Every <strong>Citrine Technology</strong> customer experience reflects the trust and quality behind our services.
+                    </p>
+                </div>
+
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper mb-8">
+                        @foreach (var item in Model.Testimonial)
+                        {
+                            <div class="swiper-slide bg-gradient-to-br from-yellow-200 via-yellow-200 to-white text-black rounded-2xl p-6 relative flex flex-col gap-4">
+                                <p class="italic font-semibold leading-relaxed">
+                                    “@item.Description”
+                                </p>
+                                <div class="flex items-center gap-3 pt-2">
+                                    <img src="~/img/avt.jpg" alt="@item.Name" class="w-10 h-10 rounded-full border-2 border-white" />
+                                    <div>
+                                        <p class="font-semibold">@item.Name</p>
+                                        <p class="text-yellow-400 text-sm">@item.Designation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="swiper-pagination mt-5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!--Why choose-->
+@* <section class="max-w-7xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Left Image with Badge -->
+    <div class="relative scroll-animate opacity-0" data-animate="slide-in-left">
+        <!-- Badge Top-left -->
+        <div class="absolute -top-5 -left-5 bg-gradient-to-r from-amber-400 to-orange-500 px-4 py-3 rounded-xl flex flex-col items-center gap-1 shadow-xl border border-yellow-200/30">
+            <i class="fa-solid fa-trophy text-white text-lg drop-shadow-md"></i>
+            <span class="font-semibold text-xs text-white uppercase tracking-wider">Top Innovation</span>
+        </div>
+
+        <!-- Main Image -->
+        <div class="overflow-hidden rounded-2xl shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)] border border-gray-700/30">
+            <img src="~/img/Tendências de computação em nuvem.jpg"
+                 alt="Worker"
+                 class="w-full h-auto rounded-2xl transition-transform duration-700 hover:scale-105">
+        </div>
+
+        <!-- Floating + Icon -->
+        <div class="absolute bottom-4 right-4 bg-gradient-to-r from-teal-400 to-cyan-500 text-black p-3 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+        </div>
+    </div>
+    <!-- Right Content -->
+    <div class="flex flex-col gap-8 scroll-animate opacity-0 delay-150" data-animate="slide-in-right">
+        <!-- Title & Description -->
+        <div>
+            <p class="text-sm text-gray-500 mb-2">Why Choose Citrine</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">Where Innovation Meets Impact</h2>
+            <p class="text-gray-700">
+                <span class="font-semibold">Citrine</span> blends innovation with technology-driven sustainability,
+                providing IT solutions that fuel growth, reduce complexity, and strengthen communities across the globe.
+            </p>
+        </div>
+
+        <!-- Feature Boxes -->
+        <div class="flex flex-col gap-6">
+
+            <!-- Feature 1 -->
+            <div class="flex gap-4 items-start">
+                <div class="flex-shrink-0 bg-black text-yellow-400 font-bold px-4 py-2 rounded-tl-lg rounded-bl-lg">01</div>
+                <div class="bg-gradient-to-br from-amber-300 via-yellow-400 to-white text-gray-900 rounded-2xl p-6 flex-1 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h2 class="font-semibold mb-2 text-xl">Future-Ready Technology</h2>
+                    <p class="text-gray-700">Citrine Technologies is a complete IT solution provider in infrastructure management services — building the foundation for tomorrow’s innovation.</p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="flex gap-4 items-start">
+                <div class="flex-shrink-0 bg-black text-yellow-400 font-bold px-4 py-2 rounded-tl-lg rounded-bl-lg">02</div>
+                <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white rounded-2xl p-6 flex-1 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h2 class="font-semibold mb-2 text-xl">Impact-Driven Sustainability</h2>
+                    <p class="text-gray-300">We offer end-to-end IT solutions with a focus on building dedicated teams that deliver lasting business impact.</p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="flex gap-4 items-start">
+                <div class="flex-shrink-0 bg-black text-yellow-400 font-bold px-4 py-2 rounded-tl-lg rounded-bl-lg">03</div>
+                <div class="bg-gradient-to-br from-yellow-300 via-amber-200 to-white text-gray-900 rounded-2xl p-6 flex-1 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h2 class="font-semibold mb-2 text-xl">Trusted by Thousands</h2>
+                    <p class="text-gray-700">We stay ahead of the curve — combining expertise, patience, and innovation to earn the trust of clients worldwide.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+ *@
+
+
+
+
+<!-- Partner Section -->
+<section class="mx-3 rounded-2xl sm:px-6 py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="relative z-10">
+            <!-- Top section -->
+            <div class="mb-12 lg:text-left scroll-animate opacity-0" data-animate="slide-in-left">
+                <button class="border border-yellow-600 text-yellow-600 rounded-full px-5 py-2 mb-6 hover:bg-yellow-400 hover:text-[#0b1b13] transition duration-300">
+                    Our Partners
+                </button>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Powering Success With Best Pertners
+                </h2>
+
+                <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+                    <!-- Text block (70%) -->
+                    <div class="lg:basis-[70%]">
+                        <p class="text-gray-900 leading-relaxed text-base sm:text-lg text-left sm:text-center lg:text-left">
+                            We're Proud to Partner with The Best Clients in Their Field
+                        </p>
+                    </div>
+
+                    <!-- Button block (30%) -->
+                    <div class="lg:basis-[30%] flex justify-center lg:justify-end">
+                        <a asp-controller="Partner" asp-action="OurPartner"
+                           class="bg-yellow-400 text-black font-medium px-6 py-3 rounded-full hover:opacity-90 transition">
+                            Read More⚡
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner Cards     bg-[#051b11]-->
+        @* <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 scroll-animate opacity-0 delay-150" data-animate="slide-in-right">
+
+        @*  @foreach (var item in Model.Partners)
+        {
+        <div class="blog-card bg-[#374562] text-white rounded-2xl overflow-hidden shadow-lg flex flex-col group transition-transform duration-300 hover:scale-105"> *@
+        <div class="swiper partnerSwiper ">
+            <div class="swiper-wrapper">
+                <!-- Slides border border-yellow-400-->
+                @foreach (var item in Model.Partners)
+                {
+                    <div class="swiper-slide flex items-center justify-center blog-card bg-[#374562] text-white rounded-2xl overflow-hidden shadow-lg border border-yellow-500 flex flex-col group transition-transform duration-300 hover:scale-105">
+
+                        <!-- Partner Logo -->
+                        <div class="bg-white flex items-center justify-center h-32">
+                            <img src="@item.PartnerLogo" alt="@item.Name" class="min-h-20 max-h-20 object-contain transition-transform duration-500 group-hover:scale-110" />
+                        </div>
+
+                        <!-- Card Content -->
+                        <div class="p-6 flex flex-col flex-grow">
+                            <!-- Partner Name -->
+                            <h3 class="text-center font-bold text-xl mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                                @item.Name
+                            </h3>
+
+                            <!-- Optional Subtitle -->
+                            @* Uncomment if you want to show partner subtitle *@
+                            @* <p class="text-sm text-gray-300 mb-4 flex-grow">
+                        @item.SubTitle
+                        </p> *@
+
+                            <!-- Learn More Button -->
+                            @* <a href="@Url.Action("PartnerDetails", "Partner", new { id = item.Id })"
+                        class="inline-flex items-center justify-center border border-yellow-400 text-yellow-400 font-semibold px-5 py-2 rounded-full text-sm transition-colors duration-300 hover:bg-yellow-400 hover:text-black">
+                        Learn More
+                        </a> *@
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Partner Section -->
+<section class="mx-3 rounded-2xl sm:px-6 py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="relative z-10">
+            <!-- Top section -->
+            <div class="mb-12 lg:text-left scroll-animate opacity-0" data-animate="slide-in-left">
+                <button class="border border-yellow-600 text-yellow-600 rounded-full px-5 py-2 mb-6 hover:bg-yellow-400 hover:text-[#0b1b13] transition duration-300">
+                    Our Patrons
+                </button>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Powering Success With Best Patrons
+                </h2>
+
+                <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+                    <!-- Text block (70%) -->
+                    <div class="lg:basis-[70%]">
+                        <p class="text-gray-900 leading-relaxed text-base sm:text-lg text-left sm:text-center lg:text-left">
+                            We're Proud to Partner with The Best Clients in Their Field
+                        </p>
+                    </div>
+
+                    <!-- Button block (30%) -->
+                    <div class="lg:basis-[30%] flex justify-center lg:justify-end">
+                        <a asp-controller="Patrons" asp-action="OurPatrons"
+                           class="bg-yellow-400 text-black font-medium px-6 py-3 rounded-full hover:opacity-90 transition">
+                            Read More⚡
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper patroneSwiper" id="patroneSwiper">
+            <div class="swiper-wrapper">
+                <!-- Slides border border-yellow-400-->
+                @foreach (var item in Model.Patrons)
+                {
+                    <div class="swiper-slide flex items-center justify-center blog-card bg-[#374562] text-white rounded-2xl overflow-hidden shadow-lg border border-yellow-500 flex flex-col group transition-transform duration-300 hover:scale-105">
+
+                        <!-- Partner Logo -->
+                        <div class="bg-white flex items-center justify-center h-32">
+                            <img src="@item.PatronLogo" alt="@item.Name" class="min-h-20 max-h-20 object-contain transition-transform duration-500 group-hover:scale-110" />
+                        </div>
+
+                        <!-- Card Content -->
+                        <div class="p-6 flex flex-col flex-grow">
+                            <!-- Partner Name -->
+                            <h3 class="text-center font-bold mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                                @item.Name
+                            </h3>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<style>
+    #patroneSwiper {
+        direction: rtl; /* flips the flow right-to-left */
+    }
+</style>
+
+@* <!-- Patrons Section -->
+<section class="mx-3 bg-gray-300 sm:px-6 py-16 md:py-24 rounded-2xl">
+    <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-3xl md:text-xl font-bold text-gray-900 mb-10">
+            Our Patrons
+        </h1>
+
+        <!-- Swiper Container -->
+        <div class="swiper patroneSwiper" id="patroneSwiper">
+            <div class="swiper-wrapper">
+                <!-- Slides border border-yellow-400-->
+                @foreach (var item in Model.Patrons)
+                {
+                    <div class="swiper-slide flex items-center justify-center">
+                        <div class="w-44 h-32 backdrop-blur-xl bg-white border border-white/20 rounded-xl p-3
+                flex flex-col items-center justify-center shadow-lg">
+
+                            <img src="@item.PatronLogo"
+                                 alt="@item.Name"
+                                 class="max-h-12 max-w-20 object-contain mb-2" />
+
+                            <p class="text-sm font-medium text-yellow-500 text-center">
+                                @item.Name
+                            </p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+ *@
+
+
+
+
+
+
+
+
+<!-- Form Section -->
+<section class="mx-3 bg-[#0e2e1d] rounded-3xl overflow-hidden py-16 px-4 rounded-2xl " style="display:none;">
+    <div class="max-w-7xl mx-auto max-w-7xl">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <!-- Left Content -->
+            <div class="w-full md:w-1/2 text-white  scroll-animate opacity-0" data-animate="slide-in-left">
+                <span class="inline-block bg-yellow-400 text-black font-semibold text-sm px-4 py-1 rounded-full mb-4 ">
+                    Powered by Trust and Results
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-bold leading-tight mb-4  ">
+                    Ready to switch to IT?<br />Let’s start the journey.
+                </h2>
+                <p class="text-white/90 text-base mb-6 max-w-lg leading-relaxed  ">
+                    With <strong>IT Technology</strong>, IT solutions aren’t complicated — they’re reliable, intelligent, and built to perform.
+                    Together, let’s power the future with clean, smart, and sustainable innovation.
+                </p>
+                <button class="bg-white text-black font-semibold px-6 py-2 rounded-full hover:scale-105 transition-transform glow hover:text-yellow-400">
+                    Explore Solutions ⚡
+                </button>
+            </div>
+
+            <!-- Right Form -->
+            <div class="w-full md:w-1/2  scroll-animate opacity-0" data-animate="slide-in-up">
+                <div class="bg-white rounded-t-2xl p-6 shadow-lg mb-[-69px] md:mb-[-183px] lg:mb-[-80px] xl:mb-[-75px]">
+
+                    <h3 class="text-2xl font-bold mb-6 text-black">Get Your Free Consultation</h3>
+                    <form class="space-y-4 ">
+                        <!-- Name -->
+                        <div>
+                            <label class="block text-sm font-semibold text-black mb-1">
+                                Your Name <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" placeholder="e.g. Sameer Patel"
+                                   class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-sm font-semibold text-black mb-1">
+                                Email <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" placeholder="e.g. sameer123@gmail.com"
+                                   class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label class="block text-sm font-semibold text-black mb-1">
+                                Message <span class="text-red-500">*</span>
+                            </label>
+                            <textarea rows="2" placeholder="Tell us what you need here..."
+                                      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit"
+                                class="w-full bg-yellow-400 text-black font-16 px-6 py-3 rounded-full hover:opacity-90 transition">
+                            Free Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

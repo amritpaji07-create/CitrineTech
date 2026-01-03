@@ -1,0 +1,2234 @@
+﻿@* @using CitrineTechData.ViewModel
+@model CommonViewModel
+@using System.Linq
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- breadcrumb-area-start -->
+<section class="breadcrumb-area breadcrumb-wrap">
+    <div class="breadcrumb-bg" data-background="New_assets/img/breadcrumb/breadcrumb-bg-1.jpg" style="background-image: url(&quot;New_assets/img/breadcrumb/breadcrumb-bg-1.jpg&quot;);"></div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12">
+                <div class="tpbreadcrumb">
+                    <!--<div class="breadcrumb-link mb-15">
+                        <span class="breadcrumb-item-active"><a href="index.html">Home</a></span>
+                        <span> / Products Details</span>
+                    </div>-->
+                    <h2 class="breadcrumb-title">Projects Details</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb-shape">
+        <div class="breadcrumb-shape-1 wow fadeInRight" data-wow-duration="1.8s" data-wow-delay=".4s" style="visibility: visible; animation-duration: 1.8s; animation-delay: 0.4s; animation-name: fadeInRight;">
+            <img src="New_assets/img/breadcrumb/breadcrumb-shape-1.png" alt="">
+        </div>
+        <div class="breadcrumb-shape-4 wow slideInRight" data-wow-duration="1.2s" data-wow-delay=".1s" style="visibility: visible; animation-duration: 1.2s; animation-delay: 0.1s; animation-name: slideInRight;">
+            <img src="New_assets/img/breadcrumb/breadcrumb-shape-3.png" alt="">
+        </div>
+        <div class="breadcrumb-shape-5 wow slideInRight" data-wow-duration="1.4s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1.4s; animation-delay: 0.3s; animation-name: slideInRight;">
+            <img src="New_assets/img/breadcrumb/breadcrumb-shape-2.png" alt="">
+        </div>
+    </div>
+</section>
+<!-- breadcrumb-area-end -->
+<!-- project-details-area-start -->
+<section class="project-details-area pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-lg-12">
+                <div class="tp-project-details-thumb w-img mb-30">
+                    <img src="New_assets/img/project/project-details-thumb-1.jpg" alt="">
+                </div>
+            </div>-->
+        </div>
+        <div class="tp-project-details-catagory-border mb-30">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tp-project-details-catagory mb-20">
+                        <h4 class="tp-project-details-catagory-title title-anim"><div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">A</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">g</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">E</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">R</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">P</div></div></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tp-project-details-catagory-content mb-40">
+                    <!--<h5>About Projects</h5>-->
+                    <p style="font-size: 18px;">MP Agro  is  adopting  cash  basis  of  accounting  and all the expenditure  and income are recorded  and  recognized  on  cash  basis.  Auditors and  management  have  expressed  their  concerns  on inability &amp;  difficulty involved in  determining  the  extent  and  status of  completion of  various  works  and  valuation  thereof. This has impact on ascertaining the true financial position of organization.  The main  objective of this document is to identify and record the business process of  various  interconnected and  interdependent  section of MPAgro with  special  reference  to  its integration,  predefined work flow,   analytical  exceptional reports &amp;  impact on  basis of core &amp; business modules including accounting . This document will also form the basis of automation of   various   activities through implementation of software solution.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- project-details-area-end -->
+<!-- project-area-start -->
+<section id="project-one-page" class="project-area tp-project-4 fix pb-120 pt-5">
+    <div class="tp-project-4-bg" data-background="New_assets/img/project/four/project-4-bg-1.jpg" style="background-image: url(&quot;New_assets/img/project/four/project-4-bg-1.jpg&quot;);"></div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-7 col-lg-8 col-md-8">
+                <div class="tp-section tp-section-red">
+                    <h4 class="tp-section-title">Our Solutions - Our Strength</h4>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-4 col-md-4">
+                <div class="tp-project-4-arrows ">
+                    <div class="tp-project-4-arrows-wrapper">
+                        <div class="tp-project-4-prv" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-25b18220d38e8b54"><i class="fa-regular fa-arrow-left"></i></div>
+                        <!--<div class="tp-project-4-nxt"><i class="fa-regular fa-arrow-right"></i></div>-->
+
+                    </div><div class="tp-project-4-arrows-wrapper">
+                        <!--<div class="tp-project-4-prv"><i class="fa-regular fa-arrow-left"></i></div>-->
+                        <div class="tp-project-4-nxt" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-25b18220d38e8b54"><i class="fa-regular fa-arrow-right"></i></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tp-project-4-wrapper">
+                    <div class="swiper-container tp-project-4-active swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                        <div class="swiper-wrapper" id="swiper-wrapper-25b18220d38e8b54" aria-live="off" style="transform: translate3d(-3704px, 0px, 0px); transition-duration: 0ms;">
+                            <div class="swiper-slide CustomShadow swiper-slide-duplicate" role="group" aria-label="122 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="117">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: hidden; animation-name: none;"></div>
+                                        <img src="assets/images/Project&amp;Products/e-Work_Permit_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="e-Work-Permit-System.html">
+                                                e-Work Permit System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="e-Work-Permit-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="5 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="0">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Forest_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Forest ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Forest-ERP-Project"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="6 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="1">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Finance_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Finance Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="7 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="2">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Nursery_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Nursery-Managemant-System-Project.html">
+                                                e-Nursery Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Nursery-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="8 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="3">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Assat-Management-System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Asset-Management-System.html">
+                                                Asset Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Asset-Management-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="9 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="4">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Cooperative_Dairy_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Coopretive-Dairy-ERP-Project.html">Cooperative Dairy ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Coopretive-Dairy-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="10 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="5">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Seed_Trace_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Seedtrace-Managemant-System-Project.html">Seedtrace Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Seedtrace-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow swiper-slide-prev" role="group" aria-label="11 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="6">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Legal_Cases_Monitoring_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Legal Cases Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow swiper-slide-active" role="group" aria-label="12 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="7">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/e-Work_Permit_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="e-Work-Permit-System.html">
+                                                e-Work Permit System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="e-Work-Permit-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow swiper-slide-next" role="group" aria-label="13 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="8">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Agri_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Agri-ERP-Project.html">
+                                                Agri ERP
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Agri-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="14 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="9">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Sports_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Sports Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="15 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="10">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/University_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">University Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="16 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="11">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Geo_Tracking _System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Geo Tracking System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="17 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="12">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/HRMS_Payroll_Solutions.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">HRMS &amp; Payroll Solutions</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="swiper-slide CustomShadow">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow"></div>
+                                        <img src="assets/images/Project&Products/Bankers_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Bankers Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="18 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="13">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Forest_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Forest ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="19 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="14">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Finance_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Finance Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="20 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="15">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Nursery_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Nursery-Managemant-System-Project.html">
+                                                e-Nursery Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Nursery-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="21 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="16">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Agri_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Agri-ERP-Project.html">
+                                                Agri ERP
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Agri-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="22 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="17">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Cooperative_Dairy_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Coopretive-Dairy-ERP-Project.html">Cooperative Dairy ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Coopretive-Dairy-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="23 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="18">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Seed_Trace_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Seedtrace-Managemant-System-Project.html">Seedtrace Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Seedtrace-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="24 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="19">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Legal_Cases_Monitoring_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Legal Cases Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="25 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="20">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Assat-Management-System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Asset-Management-System.html">
+                                                Asset Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Asset-Management-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="26 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="21">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Sports_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Sports Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="27 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="22">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/University_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">University Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="28 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="23">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Geo_Tracking _System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Geo Tracking System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="29 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="24">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/HRMS_Payroll_Solutions.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">HRMS &amp; Payroll Solutions</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="30 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="25">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/e-Work_Permit_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="e-Work-Permit-System.html">
+                                                e-Work Permit System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="e-Work-Permit-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="31 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="26">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Bankers_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Bankers Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="32 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="27">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Forest_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Forest ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="33 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="28">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Finance_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Finance Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="34 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="29">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Nursery_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Nursery-Managemant-System-Project.html">
+                                                e-Nursery Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Nursery-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="35 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="30">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Agri_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Agri-ERP-Project.html">
+                                                Agri ERP
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Agri-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="36 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="31">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Cooperative_Dairy_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Coopretive-Dairy-ERP-Project.html">Cooperative Dairy ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Coopretive-Dairy-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="37 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="32">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Seed_Trace_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Seedtrace-Managemant-System-Project.html">Seedtrace Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Seedtrace-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="38 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="33">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Legal_Cases_Monitoring_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Legal Cases Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="39 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="34">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Assat-Management-System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Asset-Management-System.html">
+                                                Asset Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Asset-Management-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="40 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="35">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Sports_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Sports Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="41 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="36">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/University_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">University Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="42 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="37">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Geo_Tracking _System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Geo Tracking System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="43 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="38">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/HRMS_Payroll_Solutions.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">HRMS &amp; Payroll Solutions</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="swiper-slide CustomShadow">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow"></div>
+                                        <img src="assets/images/Project&Products/Bankers_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Bankers Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="44 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="39">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Forest_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Forest ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="45 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="40">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Finance_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Finance Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="46 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="41">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/e-Work_Permit_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="e-Work-Permit-System.html">
+                                                e-Work Permit System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="e-Work-Permit-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="47 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="42">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Nursery_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Nursery-Managemant-System-Project.html">
+                                                e-Nursery Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Nursery-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="48 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="43">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Agri_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Agri-ERP-Project.html">
+                                                Agri ERP
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Agri-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="49 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="44">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Cooperative_Dairy_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Coopretive-Dairy-ERP-Project.html">Cooperative Dairy ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Coopretive-Dairy-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="50 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="45">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Seed_Trace_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Seedtrace-Managemant-System-Project.html">Seedtrace Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Seedtrace-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="51 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="46">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Legal_Cases_Monitoring_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Legal Cases Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="52 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="47">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Assat-Management-System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Asset-Management-System.html">
+                                                Asset Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Asset-Management-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="53 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="48">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Sports_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Sports Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="54 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="49">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/University_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">University Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="55 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="50">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Geo_Tracking _System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Geo Tracking System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="56 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="51">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/e-Work_Permit_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="e-Work-Permit-System.html">
+                                                e-Work Permit System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="e-Work-Permit-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="57 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="52">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/HRMS_Payroll_Solutions.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">HRMS &amp; Payroll Solutions</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="swiper-slide CustomShadow">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow"></div>
+                                        <img src="assets/images/Project&Products/Bankers_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Bankers Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="58 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="53">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Forest_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Forest ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="59 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="54">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Finance_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Finance Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="60 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="55">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Nursery_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Nursery-Managemant-System-Project.html">
+                                                e-Nursery Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Nursery-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="61 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="56">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Agri_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Agri-ERP-Project.html">
+                                                Agri ERP
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Agri-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="62 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="57">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Cooperative_Dairy_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Coopretive-Dairy-ERP-Project.html">Cooperative Dairy ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Coopretive-Dairy-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="63 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="58">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Seed_Trace_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Seedtrace-Managemant-System-Project.html">Seedtrace Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Seedtrace-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="64 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="59">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Legal_Cases_Monitoring_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Legal Cases Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="65 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="60">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Assat-Management-System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Asset-Management-System.html">
+                                                Asset Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Asset-Management-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="66 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="61">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Sports_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Sports Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="67 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="62">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/University_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">University Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="68 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="63">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Geo_Tracking _System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Geo Tracking System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="69 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="64">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/e-Work_Permit_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="e-Work-Permit-System.html">
+                                                e-Work Permit System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="e-Work-Permit-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="70 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="65">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/HRMS_Payroll_Solutions.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">HRMS &amp; Payroll Solutions</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="swiper-slide CustomShadow">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow"></div>
+                                        <img src="assets/images/Project&Products/Bankers_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Bankers Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="71 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="66">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Forest_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Forest ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="72 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="67">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Finance_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Finance Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="73 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="68">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Nursery_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Nursery-Managemant-System-Project.html">
+                                                e-Nursery Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Nursery-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="74 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="69">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Agri_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Agri-ERP-Project.html">
+                                                Agri ERP
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Agri-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="75 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="70">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Cooperative_Dairy_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Coopretive-Dairy-ERP-Project.html">Cooperative Dairy ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Coopretive-Dairy-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="76 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="71">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Seed_Trace_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Seedtrace-Managemant-System-Project.html">Seedtrace Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Seedtrace-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="77 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="72">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Legal_Cases_Monitoring_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Legal Cases Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="78 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="73">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Assat-Management-System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Asset-Management-System.html">
+                                                Asset Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Asset-Management-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="79 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="74">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Sports_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Sports Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="80 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="75">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/University_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">University Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="81 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="76">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Geo_Tracking _System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Geo Tracking System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="82 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="77">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/e-Work_Permit_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="e-Work-Permit-System.html">
+                                                e-Work Permit System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="e-Work-Permit-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="83 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="78">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/HRMS_Payroll_Solutions.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">HRMS &amp; Payroll Solutions</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="swiper-slide CustomShadow">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow"></div>
+                                        <img src="assets/images/Project&Products/Bankers_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Bankers Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="84 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="79">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Forest_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Forest ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="85 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="80">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Finance_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Finance Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="86 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="81">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Nursery_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Nursery-Managemant-System-Project.html">
+                                                e-Nursery Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Nursery-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="87 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="82">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Agri_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Agri-ERP-Project.html">
+                                                Agri ERP
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Agri-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="88 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="83">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Cooperative_Dairy_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Coopretive-Dairy-ERP-Project.html">Cooperative Dairy ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Coopretive-Dairy-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="89 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="84">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Seed_Trace_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Seedtrace-Managemant-System-Project.html">Seedtrace Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Seedtrace-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="90 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="85">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Legal_Cases_Monitoring_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Legal Cases Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="91 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="86">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Assat-Management-System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Asset-Management-System.html">
+                                                Asset Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Asset-Management-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="92 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="87">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Sports_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Sports Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="93 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="88">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/University_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">University Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="94 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="89">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Geo_Tracking _System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Geo Tracking System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="95 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="90">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/e-Work_Permit_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="e-Work-Permit-System.html">
+                                                e-Work Permit System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="e-Work-Permit-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="96 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="91">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/HRMS_Payroll_Solutions.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">HRMS &amp; Payroll Solutions</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="swiper-slide CustomShadow">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow"></div>
+                                        <img src="assets/images/Project&Products/Bankers_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Bankers Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="97 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="92">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Forest_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Forest ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="98 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="93">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Finance_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Finance Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="99 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="94">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Nursery_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Nursery-Managemant-System-Project.html">
+                                                e-Nursery Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Nursery-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="100 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="95">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Agri_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Agri-ERP-Project.html">
+                                                Agri ERP
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Agri-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="101 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="96">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Cooperative_Dairy_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Coopretive-Dairy-ERP-Project.html">Cooperative Dairy ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Coopretive-Dairy-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="102 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="97">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Seed_Trace_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Seedtrace-Managemant-System-Project.html">Seedtrace Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Seedtrace-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="103 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="98">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Legal_Cases_Monitoring_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Legal Cases Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="104 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="99">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Assat-Management-System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Asset-Management-System.html">
+                                                Asset Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Asset-Management-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="105 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="100">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Sports_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Sports Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="106 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="101">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/University_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">University Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="107 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="102">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Geo_Tracking _System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Geo Tracking System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="108 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="103">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/HRMS_Payroll_Solutions.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">HRMS &amp; Payroll Solutions</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="109 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="104">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/e-Work_Permit_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="e-Work-Permit-System.html">
+                                                e-Work Permit System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="e-Work-Permit-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="swiper-slide CustomShadow">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow"></div>
+                                        <img src="assets/images/Project&Products/Bankers_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Bankers Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="110 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="105">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Forest_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Forest ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="111 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="106">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Finance_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Finance Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="112 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="107">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Nursery_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Nursery-Managemant-System-Project.html">
+                                                e-Nursery Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Nursery-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="113 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="108">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Agri_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Agri-ERP-Project.html">
+                                                Agri ERP
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Agri-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="114 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="109">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Cooperative_Dairy_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Coopretive-Dairy-ERP-Project.html">Cooperative Dairy ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Coopretive-Dairy-ERP-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="115 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="110">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Seed_Trace_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Seedtrace-Managemant-System-Project.html">Seedtrace Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Seedtrace-Managemant-System-Project.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="116 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="111">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Legal_Cases_Monitoring_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Legal Cases Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="117 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="112">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Assat-Management-System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="Asset-Management-System.html">
+                                                Asset Management System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Asset-Management-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="118 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="113">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Sports_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Sports Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="119 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="114">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/University_Management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">University Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="120 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="115">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/Geo_Tracking _System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Geo Tracking System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="121 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="116">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/HRMS_Payroll_Solutions.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">HRMS &amp; Payroll Solutions</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide CustomShadow" role="group" aria-label="122 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="117">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: visible; animation-name: tpoverlay;"></div>
+                                        <img src="assets/images/Project&amp;Products/e-Work_Permit_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="e-Work-Permit-System.html">
+                                                e-Work Permit System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="e-Work-Permit-System.html"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="swiper-slide CustomShadow">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow"></div>
+                                        <img src="assets/images/Project&Products/Bankers_management_System.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Bankers Management System</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="#"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="swiper-slide CustomShadow swiper-slide-duplicate" role="group" aria-label="5 / 126" style="width: 433px; margin-right: 30px;" data-swiper-slide-index="0">
+                                <div class="tp-project-4-item">
+                                    <div class="tp-project-4-item-thumb tp-thumb-common fix">
+                                        <div class="tp-thumb-common-overlay-red wow" style="visibility: hidden; animation-name: none;"></div>
+                                        <img src="assets/images/Project&amp;Products/Forest_ERP.png" alt="">
+                                    </div>
+                                    <div class="tp-project-4-item-content">
+                                        <h4 class="tp-project-4-title under-line-white">
+                                            <a href="#">Forest ERP</a>
+                                        </h4>
+                                    </div>
+                                    <div class="tp-project-4-arrow">
+                                        <a href="Forest-ERP-Project"><i class="fa-regular fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- project-area-end -->
+        </main>
+<!-- ==== / main section end ==== -->
+<!-- ==== footer start ==== -->
+ *@

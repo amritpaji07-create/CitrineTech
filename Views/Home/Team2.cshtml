@@ -1,0 +1,311 @@
+﻿
+
+@* @using CitrineTechData.ViewModel
+@model CommonViewModel
+@using System.Linq
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ==== banner start ==== -->
+<section class="service-banner bg-black fix-top pb-120 position-relative overflow-hidden" style="background-image: url('/assets/images/bg.png')">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="service-banner__content text-center">
+                    <h2 class="mt-8 text-xxl text-white title-anim fw-7 mb-30"><div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">S</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">y</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">m</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">I</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">g</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div></div></h2>
+                    <p class="text-white cur-lg">End to End Project Design, Development, Maintinance on PPP or BOOT Model</p>
+                    <div class="mt-25 text-center">
+                        <a href="contact-us.aspx" class="alter-btn btn-anim" style="will-change: transform; transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+                            Let's
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            Connect &amp; Discuss
+                            <span style="left: 20.4012px; top: -46.9494px;"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="social">
+        <li>
+            <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.twitter.com/" target="_blank" aria-label="share us on twitter">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.pinterest.com/" target="_blank" aria-label="share us on pinterest">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="share us on instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </li>
+    </ul>
+    <a href="#scroll-to" class="scroll-to">
+        Scroll
+        <span class="arrow"></span>
+    </a>
+    <div class="thumb-two" style="translate: none; rotate: none; scale: none; z-index: -1; transform: translate(0px, 0%); opacity: 1;">
+        <img src="~/assets/images/si_image2.png" alt="Image">
+    </div>
+</section>
+<!-- ==== / banner end ==== -->
+<!-- ==== transform start ==== -->
+<section class="transform pt-120 pb-120 ">
+    <div class="container">
+        <div class="row vertical-column-gap pb-120 fade-wrapper">
+            <div class="col-12 col-lg-6">
+                <div class="transform__content">
+                    <h2 class="mt-8 title-anim text-secondary mb-24 fw-7"><div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">T</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">f</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">m</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">y</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">u</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">b</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">u</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">u</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">g</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">S</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">y</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">m</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">I</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">g</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">v</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">c</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">.</div></div></h2>
+                    <p class="cur-lg">Design, Developed and Successfully implemented e-Gov SI Projects. </p>
+
+                    <ul class="group">
+                        <li>Legacy Old System integration</li>
+                        <li>Enterprise application integration (EAI)</li>
+                        <li>Third-party system integration</li>
+                        <li>Business-to-business integration</li>
+                    </ul>
+                    <div class="anime d-none d-lg-flex mt-40">
+                        <span class="foot-fade"></span>
+                        <span class="foot-fade"></span>
+                        <span class="foot-fade"></span>
+                        <span class="foot-fade"></span>
+                        <span class="foot-fade"></span>
+                        <span class="foot-fade"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xxl-5 offset-xxl-1">
+                <div class="transform__thumb fade-top fade-img" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    <div class="parallax-image-wrap" style="overflow: hidden;"><div class="parallax-image-inner" style=""><img src="~/assets/images/si_image.png" class="w-100 parallax-image mh-300" alt="Image" style="translate: none; rotate: none; scale: none; transform: scale(1.2, 1.2);"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="transform-inner pt-120 pb-120">
+                    <h4 class="mt-8 text-secondary fw-7">Turnkey &amp; PPP Model SI Projects</h4>
+                    <div class="transform-slider-wrapper mt-60">
+                        <div class="transform-slider slick-initialized slick-slider">
+                            <div class="slick-list draggable">
+                                <div class="slick-track" style="opacity: 1; width: 20000px; transform: translate3d(-984px, 0px, 0px);">
+                                    <div class="transform-single slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" tabindex="-1">
+                                        <h5 class="mt-8 text-secondary text-center mb-30">Business-To-Business Integration</h5>
+
+                                        <p class="cur-lg">Connecting systems of two or more organizations. B2B integration automates transactions and document exchange across companies. It leads to more efficient cooperation and trade with suppliers, customers, and partners.</p>
+                                    </div><div class="transform-single slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1">
+                                        <h5 class="mt-8 text-secondary text-center mb-30">Legacy Old System Integration</h5>
+                                        <p class="cur-lg">Integration of modern applications into existing outdated systems. legacy systems can be modernized by establishing a communication channel with newer information systems and technology solutions</p>
+                                    </div><div class="transform-single slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1">
+                                        <h5 class="mt-8 text-secondary text-center mb-30">Enterprise Application Integration (EAI)</h5>
+                                        <p class="cur-lg">Unification of different subsystems inside one business environment. Enterprise application integration (EAI) brings all functions into one business chain and automates real-time data exchange between different applications</p>
+                                    </div><div class="transform-single slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" tabindex="0">
+                                        <h5 class="mt-8 text-secondary text-center mb-30">Third-Party System Integration</h5>
+
+                                        <p class="cur-lg">Expanding functionality of the existing system. Integration of third-party tools is a great option when your business needs new functionality but can’t afford custom software development or just has no time to wait for features to be built from scratch</p>
+                                    </div><div class="transform-single slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1">
+                                        <h5 class="mt-8 text-secondary text-center mb-30">Business-To-Business Integration</h5>
+
+                                        <p class="cur-lg">Connecting systems of two or more organizations. B2B integration automates transactions and document exchange across companies. It leads to more efficient cooperation and trade with suppliers, customers, and partners.</p>
+                                    </div><div class="transform-single slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true" tabindex="-1">
+                                        <h5 class="mt-8 text-secondary text-center mb-30">Legacy Old System Integration</h5>
+                                        <p class="cur-lg">Integration of modern applications into existing outdated systems. legacy systems can be modernized by establishing a communication channel with newer information systems and technology solutions</p>
+                                    </div><div class="transform-single slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" tabindex="-1">
+                                        <h5 class="mt-8 text-secondary text-center mb-30">Enterprise Application Integration (EAI)</h5>
+                                        <p class="cur-lg">Unification of different subsystems inside one business environment. Enterprise application integration (EAI) brings all functions into one business chain and automates real-time data exchange between different applications</p>
+                                    </div><div class="transform-single slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" tabindex="-1">
+                                        <h5 class="mt-8 text-secondary text-center mb-30">Third-Party System Integration</h5>
+
+                                        <p class="cur-lg">Expanding functionality of the existing system. Integration of third-party tools is a great option when your business needs new functionality but can’t afford custom software development or just has no time to wait for features to be built from scratch</p>
+                                    </div><div class="transform-single slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" tabindex="-1">
+                                        <h5 class="mt-8 text-secondary text-center mb-30">Business-To-Business Integration</h5>
+
+                                        <p class="cur-lg">Connecting systems of two or more organizations. B2B integration automates transactions and document exchange across companies. It leads to more efficient cooperation and trade with suppliers, customers, and partners.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row vertical-column-gap pt-120">
+            <div class="col-12 col-lg-6">
+                <div class="team__content">
+                    <h4 class="mt-8 text-secondary fw-7">Why you should choose SFA Technologies?</h4>
+                    <div class="team-slider mt-60 slick-initialized slick-slider">
+                        <div class="slick-list draggable">
+                            <div class="slick-track" style="opacity: 1; width: 4763px; transform: translate3d(-866px, 0px, 0px);">
+                                <div class="team-single slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" style="width: 409px;" tabindex="-1">
+                                    <h3 class="mt-8 mb-24" style="font-family: cursive ">New Technology Adoption</h3>
+                                    <p class="cur-lg"></p>
+                                </div><div class="team-single slick-slide" data-slick-index="0" aria-hidden="true" style="width: 409px;" tabindex="-1">
+                                    <h3 class="mt-8  mb-24" style="font-family: cursive ">Committed &amp; Experienced Management</h3>
+                                    <p class="cur-lg"></p>
+                                </div><div class="team-single slick-slide slick-current slick-active" data-slick-index="1" aria-hidden="false" style="width: 409px;" tabindex="0">
+                                    <h3 class="mt-8  mb-24" style="font-family: cursive ">20+ Years of Expertise</h3>
+                                    <p class="cur-lg"></p>
+                                </div><div class="team-single slick-slide" data-slick-index="2" aria-hidden="true" style="width: 409px;" tabindex="-1">
+                                    <h3 class="mt-8 mb-24" style="font-family: cursive ">Core Technical Team</h3>
+                                    <p class="cur-lg"></p>
+                                </div><div class="team-single slick-slide" data-slick-index="3" aria-hidden="true" style="width: 409px;" tabindex="-1">
+                                    <h3 class="mt-8 mb-24" style="font-family: cursive ">Sector Specific Experts</h3>
+                                    <p class="cur-lg"></p>
+                                </div><div class="team-single slick-slide" data-slick-index="4" aria-hidden="true" style="width: 409px;" tabindex="-1">
+                                    <h3 class="mt-8 mb-24" style="font-family: cursive ">New Technology Adoption</h3>
+                                    <p class="cur-lg"></p>
+                                </div><div class="team-single slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" style="width: 409px;" tabindex="-1">
+                                    <h3 class="mt-8  mb-24" style="font-family: cursive ">Committed &amp; Experienced Management</h3>
+                                    <p class="cur-lg"></p>
+                                </div><div class="team-single slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" style="width: 409px;" tabindex="-1">
+                                    <h3 class="mt-8  mb-24" style="font-family: cursive ">20+ Years of Expertise</h3>
+                                    <p class="cur-lg"></p>
+                                </div><div class="team-single slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" style="width: 409px;" tabindex="-1">
+                                    <h3 class="mt-8 mb-24" style="font-family: cursive ">Core Technical Team</h3>
+                                    <p class="cur-lg"></p>
+                                </div><div class="team-single slick-slide slick-cloned" data-slick-index="8" id="" aria-hidden="true" style="width: 409px;" tabindex="-1">
+                                    <h3 class="mt-8 mb-24" style="font-family: cursive ">Sector Specific Experts</h3>
+                                    <p class="cur-lg"></p>
+                                </div><div class="team-single slick-slide slick-cloned" data-slick-index="9" id="" aria-hidden="true" style="width: 409px;" tabindex="-1">
+                                    <h3 class="mt-8 mb-24" style="font-family: cursive ">New Technology Adoption</h3>
+                                    <p class="cur-lg"></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="tp-team-arrow mt-60">
+                        <button class="prev-team slick-arrow" aria-label="previous team" style="">
+                            <span class="material-symbols-outlined">
+                                west
+                            </span>
+                        </button>
+                        <span class="current-slide-t">2</span>
+                        <span class="divider"></span>
+                        <span class="total-slide-t">5</span>
+                        <button class="next-team slick-arrow" aria-label="next team" style="">
+                            <span class="material-symbols-outlined">
+                                east
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xxl-5 offset-xxl-1">
+                <div class="team__thumb text-start text-lg-end">
+                    <img src="~/assets/images/team-thumb.png" class="mh-300" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section> *@
+<!-- ==== / transform end ==== -->
+<!-- ==== process start ==== -->
+<!--	<section class="pt-120 pb-120 tp-process bg-black sticky-wrapper">
+    <div class="container">
+        <div class="row vertical-column-gap">
+            <div class="col-12 col-lg-6">
+                <div class="process__content sticky-item">
+                    <h2 class="mt-8 title-anim text-white fw-7 mb-24">Artificial intelligence Process</h2>
+                    <p class="cur-lg text-quinary">Quisque varius malesuada dui, ut posuere purus gravida in. Phasellus ultricies ullamcorper mollis. Pellentesque varius lectus in massa placerat cursus. Donec in dictum nisl. In maximus posuere leo nec porttitor.</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xxl-5 offset-xxl-1">
+                <div class="process__thumb sticky-item">
+                    <div class="process__single">
+                        <span class="op-text text-white mb-40 cur-lg">01</span>
+                        <h5 class="mt-8 text-white mb-24 title-anim">Computer Vision</h5>
+                        <p class="cur-lg text-quinary">Quisque varius malesuada dui, ut posuere purus gravida in. Phasellus ultricies ullamcorper mollis.</p>
+                    </div>
+                    <div class="process__single">
+                        <span class="op-text text-white mb-40 cur-lg">02</span>
+                        <h5 class="mt-8 text-white mb-24 title-anim">Computer Vision</h5>
+                        <p class="cur-lg text-quinary">Quisque varius malesuada dui, ut posuere purus gravida in. Phasellus ultricies ullamcorper mollis.</p>
+                    </div>
+                    <div class="process__single">
+                        <span class="op-text text-white mb-40 cur-lg">03</span>
+                        <h5 class="mt-8 text-white mb-24 title-anim">3D Vision</h5>
+                        <p class="cur-lg text-quinary">Quisque varius malesuada dui, ut posuere purus gravida in. Phasellus ultricies ullamcorper mollis.</p>
+                    </div>
+                    <div class="process__single">
+                        <span class="op-text text-white mb-40 cur-lg">04</span>
+                        <h5 class="mt-8 text-white mb-24 title-anim">Computer Vision</h5>
+                        <p class="cur-lg text-quinary">Quisque varius malesuada dui, ut posuere purus gravida in. Phasellus ultricies ullamcorper mollis.</p>
+                    </div>
+                    <div class="process__single">
+                        <span class="op-text text-white mb-40 cur-lg">05</span>
+                        <h5 class="mt-8 text-white mb-24 title-anim">3D Vision</h5>
+                        <p class="cur-lg text-quinary">Quisque varius malesuada dui, ut posuere purus gravida in. Phasellus ultricies ullamcorper mollis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- ==== / process end ==== -->
+<!-- ==== contact section start ====
+
+<section class="tp-contact pt-120 pb-120 fade-wrapper">
+    @* <div class="container">
+        <div class="row vertical-column-gap-md justify-content-between">
+            <div class="col-12 col-lg-5">
+                <div class="tp-contact__content">
+                    <h2 class="mt-8 fw-7 text-secondary title-anim">Let's talk about your project</h2>
+                    <div class="contact-form mt-60">
+                        <form action="#" method="post">
+                            <div class="input-single">
+                                <input type="text"
+                                       name="contact-name"
+                                       id="contactName"
+                                       placeholder="Name"
+                                       required>
+                            </div>
+                            <div class="input-single">
+                                <input type="email"
+                                       name="contact-email"
+                                       id="contactEmail"
+                                       placeholder="Email"
+                                       required>
+                            </div>
+                            <div class="input-single">
+                                <input type="text"
+                                       name="company-name"
+                                       id="companyName"
+                                       placeholder="Company"
+                                       required>
+                            </div>
+                            <div class="input-single">
+                                <textarea name="user-message" id="userMessage" placeholder="Message"></textarea>
+                            </div>
+                            <div class="mt-60">
+                                <button type="submit" class="btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 offset-xl-1">
+                <div class="tp-contact__thumb fade-top fade-img">
+                    <img src="~/assets/images/contact-thumb.png" class="w-100 parallax-image" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div> *@
+@* </section> *@
+<!-- ==== / contact section end ==== -->

@@ -1,0 +1,135 @@
+﻿@model List<CitrineTechData.ViewModel.BlogViewModel>
+
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<style>
+    .scroll-zoom {
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    #scrollBlogContent {
+        transform-origin: center;
+    }
+
+</style>
+
+<section class="hero1 mx-3 bg-gradient-to-r from-[#051b11] via-[#123d2d] to-[#a47e1f] relative px-2 h-100 rounded-2xl overflow-hidden">
+    <div class="max-w-7xl mx-auto text-white sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-sm-2">
+
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2 flex flex-col items-center text-center text-white py-12 z-10">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-2">@ViewData["Title"]</h2>
+            <p class="text-yellow-400 scroll-animate opacity-0" data-animate="slide-in-left" ">
+                <a asp-action="Index">Home</a>
+                <span class="text-white"> – @ViewData["Title"]</span>
+            </p>
+        </div>
+
+        <!-- Right Image -->
+        <div class="w-full md:w-1/2 flex items-center justify-center relative overflow-hidden">
+            <img id="scrollImage"
+                 src="~/img/Fun.png"
+                 alt="Engineers"
+                 class="w-full h-auto transition-transform duration-300 ease-out will-change-transform">
+        </div>
+    </div>
+</section>
+
+<script>
+    window.addEventListener("scroll", function () {
+        // === Image Animation ===
+        const image = document.getElementById("scrollImage");
+        const heroSection = document.querySelector(".hero1");
+        const heroRect = heroSection.getBoundingClientRect();
+
+        let imageProgress = 1 - (heroRect.bottom / window.innerHeight);
+        imageProgress = Math.min(Math.max(imageProgress, 0), 1);
+
+        const imageScale = 1 + imageProgress * 0.8;   // 1 → 1.8
+        const imageOpacity = 1 - imageProgress * 0.6; // 1 → 0.4
+
+        image.style.transform = `scale(${imageScale})`;
+        image.style.opacity = imageOpacity;
+
+
+        // === Blog Content Animation ===
+        const content = document.getElementById("scrollBlogContent");
+        const blogSection = document.querySelector("#scrollBlogContent"); // ⚠️ make sure your blog section has class="blog"
+        if (content && blogSection) {
+            const blogRect = blogSection.getBoundingClientRect();
+
+            let contentProgress = 1 - (blogRect.bottom / window.innerHeight);
+            contentProgress = Math.min(Math.max(contentProgress, 0), 1);
+
+            const translateY = contentProgress * -40; // move upward
+            const contentScale = 1 + contentProgress * 0.1; // 1 → 1.1
+            const contentOpacity = 1 - contentProgress * 0.6; // 1 → 0.4
+
+            content.style.transform = `translateY(${translateY}px) scale(${contentScale})`;
+            content.style.opacity = contentOpacity;
+        }
+    });
+</script>
+
+
+<!-- Blog Cards -->
+<section class="mx-3 py-20">
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 scroll-animate opacity-0 delay-150" data-animate="slide-in-right">
+
+        @foreach (var item in Model)
+        {
+            <div  class="blog-card bg-[#051b11] text-white rounded-2xl overflow-hidden shadow-lg flex flex-col p-2 group ">
+                <img src="/@item.ImageUrl" alt="@item.Title" class="blog-image w-full h-56 object-cover transition-transform duration-500" />
+
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="text-sm mb-2 flex items-center gap-4">
+                        <span class="inline-flex items-center gap-1"><i class="bi bi-calendar text-yellow-400"></i> June 20, 2025</span>
+                        @* <span class="inline-flex items-center gap-1"><i class="bi bi-chat text-yellow-400"></i> 0</span> *@
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 hover:text-yellow-400">@item.Title </h3>
+                    <p class="text-sm text-white/90 mb-4 flex-grow hover:opacity-90">
+                        @item.SubTitle
+                    </p>
+                    <a href="@Url.Action("Details", "Blog", new { id = item.Id })" class="inline-flex items-center justify-center border-1 border-yellow-400 text-white font-semibold px-4 py-2 rounded-full text-sm transition-colors duration-300 ease-in-out hover:bg-yellow-400 hover:text-black"> Learn More </a>
+                </div>
+            </div>
+        }
+    </div>
+
+</section>
+
+@* <section id="scrollBlogContent" class="relative z-20 w-full max-w-4xl mx-auto transition-all duration-300 ease-out will-change-transform">
+    <!-- Full Section Background Image -->
+    <img src="~/assets/images/gol-dust.png" alt="Project Image" class="absolute inset-0 w-full h-full object-cover z-0" />
+
+    <!-- Content -->
+    <div class="relative z-20 w-full max-w-4xl mx-auto">
+        <div class="max-w-5xl mx-auto py-12 px-4 text-black">
+            <div class="rounded-xl overflow-hidden border-4 border-yellow-400 mb-6 h-82">
+                <img src="@Url.Content("~/" + (string.IsNullOrEmpty(Model.ImageUrl) ? "img/default.jpg" : Model.ImageUrl))"
+                     alt="@Model.Title" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 space-y-4">
+                <p class="inline-flex items-center gap-2 px-3 py-1 bg-yellow-100 text-gray-600 text-sm font-semibold rounded-full shadow-sm border border-gray-300">
+                    <i class="fa-solid fa-calendar-days text-gray-500"></i>
+                    @Model.BlogDate.ToString("dd MMM yyyy")
+                </p>
+                <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+                    @Model.Title
+                </h1>
+                <p class="text-lg font-medium text-yellow-600 italic">
+                    @Model.SubTitle
+                </p>
+                <p class="text-base leading-relaxed text-justify text-gray-700">
+                    @Model.Description
+                </p>
+            </div>           
+        </div>
+    </div>
+</section> *@

@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">📊 Dashboard Overview</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <!-- Blogs Model.TotalBlogs-->
+        <div class="bg-white shadow-md rounded-lg p-6 text-center border-t-4 border-blue-500">
+            <div class="flex justify-center items-center mb-2 text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21H5a2 2 0 01-2-2V7a2 2 0 012-2h4l2-2h6a2 2 0 012 2v14a2 2 0 01-2 2z" />
+                </svg>
+            </div>
+            <div class="text-3xl font-bold text-gray-800">@ViewBag.Blogs</div>
+            <div class="mt-2 text-sm text-gray-500">Blogs</div>
+        </div>
+
+        <!-- Users Model.TotalUsers-->
+        <div class="bg-white shadow-md rounded-lg p-6 text-center border-t-4 border-green-500">
+            <div class="flex justify-center items-center mb-2 text-lime-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 0110 15h4a4 4 0 014.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </div>
+            <div class="text-3xl font-bold text-gray-800">@ViewBag.Users</div>
+            <div class="mt-2 text-sm text-gray-500">Users</div>
+        </div>
+
+        <!-- Services Model.TotalServices-->
+        <div class="bg-white shadow-md rounded-lg p-6 text-center border-t-4 border-purple-500">
+            <div class="flex justify-center items-center mb-2 text-indigo-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L8 21h8l-1.75-4M12 3v6m0 0l3-3m-3 3L9 6" />
+                </svg>
+            </div>
+            <div class="text-3xl font-bold text-gray-800">@ViewBag.Services</div>
+            <div class="mt-2 text-sm text-gray-500">Services</div>
+        </div>
+
+        <!-- Solutions Model.TotalSolutions-->
+        <div class="bg-white shadow-md rounded-lg p-6 text-center border-t-4 border-yellow-500">
+            <div class="flex justify-center items-center mb-2 text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 20h.01M4 4h16v16H4V4z" />
+                </svg>
+            </div>
+            <div class="text-3xl font-bold text-gray-800">@ViewBag.Solutions</div>
+            <div class="mt-2 text-sm text-gray-500">Solutions</div>
+        </div>
+
+        <!-- Partners Model.TotalPartners-->
+        <div class="bg-white shadow-md rounded-lg p-6 text-center border-t-4 border-red-500">
+            <div class="flex justify-center items-center mb-2 text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8a9 9 0 100-18 9 9 0 000 18z" />
+                </svg>
+            </div>
+            <div class="text-3xl font-bold text-gray-800">@ViewBag.Partners</div>
+            <div class="mt-2 text-sm text-gray-500">Partners</div>
+        </div>
+    </div>
+</div>

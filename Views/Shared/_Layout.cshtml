@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="~/assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>Citrine Technologies | Software Development & IT Solutions</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="software, it, agency, html">
+    <!-- #description -->
+    <meta name="description" content="Software Development & It Solutions">
+    <!-- ==== css dependencies start ==== -->
+    <!-- bootstrap five css -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <!-- font awesome six css -->
+    <link rel="stylesheet" href="~/assets/css/all.min.css">
+    <!-- material icons css -->
+    <link rel="stylesheet" href="~/assets/css/material-icons.css">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
+    <!-- slick css -->
+    <link rel="stylesheet" href="~/assets/css/slick.css">
+    <!-- odometer css -->
+    <link rel="stylesheet" href="~/assets/css/odometer.css">
+    <!-- ==== / css dependencies end ==== -->
+    <!-- main css -->
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link href="~/assets/css/customstyle.css" rel="stylesheet" />
+    <link href="~/assets/css/custom.css" rel="stylesheet" />
+    @* <link rel="stylesheet" href="~/assets/css/bootstrap.css"> *@
+    <link rel="stylesheet" href="~/New_assets/css/animate.css">
+    <link rel="stylesheet" href="~/New_assets/css/slick.css">
+    <link rel="stylesheet" href="~/New_assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/New_assets/css/swiper-bundle.css">
+    <link rel="stylesheet" href="~/New_assets/css/font-awesome-pro.css">
+    <link rel="stylesheet" href="~/New_assets/css/flaticon_tecz.css">
+    <link rel="stylesheet" href="~/New_assets/css/spacing.css">
+</head>
+<body>
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <div class="tp-app">
+        <!-- ==== preloader start ==== -->
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader">
+                <div class="animation-preloader">
+                    <div class="spinner"></div>
+                    <div class="txt-loading">
+                        <span data-text-preloader="L" class="letters-loading">
+                            L
+                        </span>
+                        <span data-text-preloader="O" class="letters-loading">
+                            O
+                        </span>
+                        <span data-text-preloader="A" class="letters-loading">
+                            A
+                        </span>
+                        <span data-text-preloader="D" class="letters-loading">
+                            D
+                        </span>
+                        <span data-text-preloader="I" class="letters-loading">
+                            I
+                        </span>
+                        <span data-text-preloader="N" class="letters-loading">
+                            N
+                        </span>
+                        <span data-text-preloader="G" class="letters-loading">
+                            G
+                        </span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+        <!-- ==== / preloader end ==== -->
+        <!-- ==== header start ==== -->
+        <header class="tp-header">
+            <div class="primary-navbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav class="navbar p-0">
+                                <div class="navbar__logo">
+                                    <a href="index.html" aria-label="go to home" class="logo-img">
+                                        <img src="~/img/logo.png" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="navbar__logo">
+                                </div>
+                                <div class="navbar__options">
+                                    @* <div class="logo">
+                                        <div class="logo-img mb-1">
+                                            <img src="~/assets/images/CMMI.png" alt="Image" title="Logo">
+                                        </div>
+                                    </div> *@
+                                    <button class="open-offcanvas-nav" aria-label="toggle mobile menu" title="open offcanvas menu">
+                                        <span class="icon-bar top-bar"></span>
+                                        <span class="icon-bar middle-bar"></span>
+                                        <span class="icon-bar bottom-bar"></span>
+                                    </button>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ==== / header end ==== -->
+        <!-- ==== offcanvas nav start ==== -->
+        <div class="offcanvas-nav">
+            <div class="offcanvas-menu">
+                <nav class="offcanvas-menu__wrapper" data-lenis-prevent>
+                    <div class="offcanvas-menu__header nav-fade">
+                        <div class="logo">
+                            <a href="index.html" class="logo-img">
+                                <img src="~/assets/images/logo-light.png" alt="Image" title="Logo">
+                            </a>
+                        </div>
+                        <button aria-label="close offcanvas menu" class="close-offcanvas-menu">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="offcanvas-menu__list">
+                        <div class="navbar__menu">
+                            <ul>
+                                <li class="navbar__item nav-fade">
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li class="navbar__item navbar__item--has-children nav-fade">
+                                    <button aria-label="dropdown menu" class="navbar__dropdown-label">About Us</button>
+                                    <ul class="navbar__sub-menu">
+                                        <li>
+                                            <a href="about-us.html">About Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="management.html">Management</a>
+                                        </li>
+                                        <li>
+                                            <a href="Core-Team.html">Core Team</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="navbar__item navbar__item--has-children nav-fade">
+                                    <button aria-label="dropdown menu" class="navbar__dropdown-label">Services</button>
+                                    <ul class="navbar__sub-menu">
+                                        <li>
+                                            <a href="services.html">Services Overview</a>
+                                        </li>
+                                        <li>
+                                            <a href="si.html">System Integration</a>
+                                        </li>
+                                        <li>
+                                            <a href="erp.html">ERP</a>
+                                        </li>
+                                        <li>
+                                            <a href="blockchain.html">Block Chain</a>
+                                        </li>
+                                        <li>
+                                            <a href="cloud.html">Cloud Solutions</a>
+                                        </li>
+                                        <li>
+                                            <a href="webapp.html">Web & Mobile App</a>
+                                        </li>
+                                        <li>
+                                            <a href="bi.html">Business Intelligence</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="navbar__item navbar__item--has-children nav-fade">
+                                    <button aria-label="dropdown menu" class="navbar__dropdown-label">Career</button>
+                                    <ul class="navbar__sub-menu">
+                                        <li>
+                                            <a href="career.html">Openings</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="navbar__item nav-fade">
+                                    <a href="blog.html">Gallery</a>
+                                </li>
+                                <li class="navbar__item nav-fade">
+                                    <a href="Contact-us.aspx">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!--<ul class=" social nav-fade">
+                    <li>
+                        <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>-->
+                <!--<li>
+                    <a href="https://www.twitter.com/" target="_blank" aria-label="share us on twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </li>-->
+                <!--<li>
+                    <a href="https://www.linkedin.com/login" target="_blank" aria-label="share us on pinterest">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </li>-->
+                <!--<li>
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="share us on instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>-->
+                <!--</ul>-->
+                <!--<div class="anime float-left">
+                    <span class="nav-fade"></span>
+                    <span class="nav-fade"></span>
+                    <span class="nav-fade"></span>
+                    <span class="nav-fade"></span>
+                    <span class="nav-fade"></span>
+                    <span class="nav-fade"></span>
+                </div>-->
+            </div>
+        </div>
+        <!-- ==== / offcanvas nav end ==== -->
+        <!-- ==== main section start ==== -->
+    <div class="container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+        <!-- ==== footer start ==== -->
+        <footer>
+            <div class="footer-area tp-footer-red theme-bg-2">
+                <div class="tp-footer-top pt-80">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-8 col-sm-12">
+                                <div class="tp-footer-widget footer-col-1 mb-40 wow fadeInUp" data-wow-duration=".8s"
+                                     data-wow-delay=".4s">
+                                    <div class="tp-footer-widget-logo mb-15">
+                                        <a href="index.html">
+                                            <img src="~/assets/images/Logo/logo-red-2.png" alt="fw-logo">
+                                        </a>
+                                    </div>
+                                    <div class="tp-footer-widget-content">
+                                        <div class="tp-footer-widget-content-list">
+                                            <div class="tp-footer-widget-content-list-item">
+                                                <i class="fa-solid fa-square-phone"></i><a href="tel:0123456789">0755-4279933</a>
+                                            </div>
+                                            <div class="tp-footer-widget-content-list-item">
+                                                <i class="fa-solid fa-envelope"></i><a href="mailto:info@sfatechgroup.com">info@sfatechnologies.com</a>
+                                            </div>
+                                            <div class="tp-footer-widget-content-list-item">
+                                                <i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/SFA+Technologies/@@23.2328253,77.4363439,17z/data=!3m1!4b1!4m6!3m5!1s0x397c42793015dcdf:0xba32764e7f52d442!8m2!3d23.2328204!4d77.4389188!16s%2Fg%2F11clwky7kd?entry=ttu">SFA Technologies Pvt Ltd</a>
+                                            </div>
+                                            <div class="tp-footer-widget-content-list-item">
+                                                <a href="https://www.google.com/maps/place/SFA+Technologies/@@23.2328253,77.4363439,17z/data=!3m1!4b1!4m6!3m5!1s0x397c42793015dcdf:0xba32764e7f52d442!8m2!3d23.2328204!4d77.4389188!16s%2Fg%2F11clwky7kd?entry=ttu">
+                                                    28-Sector A, Kasturba Nagar,
+                                                    Chetak Bridge, Bhopal-462023, India
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-8 col-sm-8">
+                                <div class="tp-footer-widget tp-footer-col-2 mb-40 wow fadeInUp" data-wow-duration="1s"
+                                     data-wow-delay=".6s">
+                                    <h4 class="tp-footer-widget-title mb-30">Our Navigation</h4>
+                                    <div class="tp-footer-widget-link">
+                                        <ul>
+                                            <li><a href="about-us.html"><i class="fa-sharp fa-solid fa-plus"></i>About Us</a></li>
+                                            <li><a href="services.html"><i class="fa-sharp fa-solid fa-plus"></i>Our Services</a></li>
+                                            <li>
+                                                <a href="career.html"><i class="fa-sharp fa-solid fa-plus"></i>Career</a>
+                                            </li>
+                                            <li><a href="blog.html"><i class="fa-sharp fa-solid fa-plus"></i>Gallery</a></li>
+                                            <li><a href="contact-us.aspx"><i class="fa-sharp fa-solid fa-plus"></i>Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-8 col-sm-8">
+                                <div class="tp-footer-widget tp-footer-col-3 mb-40 wow fadeInUp" data-wow-duration="1.2s"
+                                     data-wow-delay=".8s">
+
+                                    <iframe width="603" height="364" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=603&amp;height=364&amp;hl=en&amp;q=SFA%20%2028,%20Chetak%20Bridge,%20Sector%20A,%20Kasturba%20Nagar,%20Bhopal,%20Madhya%20Pradesh%20%20Bhopal+(SFA%20Technologies)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='https://www.free-counters.org/'>powered by</a>
+                                    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=9ed491f838d3a5606386c0c4136aeaa8e34f6103'></script>
+
+                                    <!--<h4 class="tp-footer-widget-title mb-40">Social</h4>
+                                    <div class="tp-footer-widget-gallery">
+                                        <div class="tp-footer-widget-gallery-all">
+                                            <div class="tp-footer-widget-gallery-single-item">
+                                                <a href="#" class="tp-footer-widget-gallery-item">
+                                                    <div class="tp-footer-widget-gallery-thumb">
+                                                        <img src="~/New_assets/img/footer/one/gallery/fw-g-1.png" alt="">
+                                                        <div class="tp-footer-widget-gallery-social">
+                                                            <i class="fa-brands fa-whatsapp"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="tp-footer-widget-gallery-single-item">
+                                                <a href="https://in.linkedin.com/" class="tp-footer-widget-gallery-item">
+                                                    <div class="tp-footer-widget-gallery-thumb">
+                                                        <img src="~/New_assets/img/footer/one/gallery/fw-g-2.png" alt="">
+                                                        <div class="tp-footer-widget-gallery-social">
+                                                            <i class="fa-brands fa-linkedin-in"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="tp-footer-widget-gallery-single-item">
+                                                <a href="https://www.facebook.com/" class="tp-footer-widget-gallery-item">
+                                                    <div class="tp-footer-widget-gallery-thumb">
+                                                        <img src="~/New_assets/img/footer/one/gallery/fw-g-3.png" alt="">
+                                                        <div class="tp-footer-widget-gallery-social">
+                                                            <i class="fa-brands fa-facebook"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="tp-footer-widget-gallery-single-item">
+                                                <a href="https://www.instagram.com/" class="tp-footer-widget-gallery-item">
+                                                    <div class="tp-footer-widget-gallery-thumb">
+                                                        <img src="~/New_assets/img/footer/one/gallery/fw-g-4.png" alt="">
+                                                        <div class="tp-footer-widget-gallery-social">
+                                                            <i class="fa-brands fa-instagram"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="tp-footer-widget-gallery-single-item">
+                                                <a href="https://twitter.com/login?lang=en" class="tp-footer-widget-gallery-item">
+                                                    <div class="tp-footer-widget-gallery-thumb">
+                                                        <img src="~/New_assets/img/footer/one/gallery/fw-g-5.png" alt="">
+                                                        <div class="tp-footer-widget-gallery-social">
+                                                            <i class="fa-brands fa-microsoft"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="tp-footer-widget-gallery-single-item">
+                                                <a href="https://www.youtube.com/" class="tp-footer-widget-gallery-item">
+                                                    <div class="tp-footer-widget-gallery-thumb">
+                                                        <img src="~/New_assets/img/footer/one/gallery/fw-g-6.png" alt="">
+                                                        <div class="tp-footer-widget-gallery-social">
+                                                            <i class="fa-solid fa-envelope"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tp-footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-7">
+                                <div class="tp-footer-copyright">
+                                    <span>
+                                        Copyright © 2023 by SFA Technologies Pvt. Ltd.<!--<a target="_blank" href="https://themeforest.net/user/hixstudio/portfolio">HixStudio</a>-->
+                                        All Rights Reserved
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-5">
+                                <div class="tp-footer-terms">
+                                    <a href="Pp.html">Privacy Policy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tp-footer-red-shape-1">
+                    <img src="~/New_assets/img/footer/two/footer-red-shape-1.png" alt="" />
+                </div>
+                <div class="tp-footer-red-shape-2" style="transform: rotate(3.142rad);">
+                    <img src="~/New_assets/img/footer/two/footer-red-shape-1.png" alt="" />
+                </div>
+            </div>
+        </footer>
+
+        <!-- ==== / footer end ==== -->
+        <!-- ==== mouse cursor drag start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner">
+            <span>Drag</span>
+        </div>
+        <!-- ==== / mouse cursor drag end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="go to top">
+            <span></span>
+            <svg class="progress-circle svg-content"
+                 width="100%"
+                 height="100%"
+                 viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="~/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- slick js -->
+    <script src="~/assets/js/slick.min.js"></script>
+    <!-- appear js -->
+    <script src="~/assets/js/jquery.appear.js"></script>
+    <!-- odometer js -->
+    <script src="~/assets/js/jquery.odometer.min.js"></script>
+    <!-- image loaded js -->
+    <script src="~/assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- isotope js -->
+    <script src="~/assets/js/isotope.pkgd.min.js"></script>
+    <!-- splittext js -->
+    <script src="~/assets/js/SplitText.min.js"></script>
+    <!-- lenis smooth scroll -->
+    <script src="~/assets/js/lenis.min.js"></script>
+    <!-- scrollto js -->
+    <script src="~/assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="~/assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="~/assets/js/gsap.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="~/assets/js/tilt.jquery.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- main js -->
+    <script src="~/New_assets/js/swiper-bundle.js"></script>
+    <script src="~/New_assets/js/slick.js"></script>
+    <script src="~/New_assets/js/range-slider.js"></script>
+    <script src="~/New_assets/js/nice-select.js"></script>
+    <script src="~/New_assets/js/purecounter.js"></script>
+    <script src="~/New_assets/js/wow.js"></script>
+    <script src="~/New_assets/js/jquery.mb.YTPlayer.js"></script>
+    <script src="~/New_assets/js/main.js"></script>
+    <!-- custom js -->
+    <script src="~/assets/js/custom.js"></script>
+</body>
+</html>
